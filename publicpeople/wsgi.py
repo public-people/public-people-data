@@ -1,5 +1,5 @@
 """
-WSGI config for code4sa project.
+WSGI config for publicpeople project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
 """
 
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "code4sa.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "publicpeople.settings")
 
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise

@@ -1,14 +1,13 @@
-Code4SA Django App Template
-===========================
+Public People
+=============
 
-This is Code for South Africa's application template for Django apps.
-
-About this template
+From the template
 -------------------
 
-This template makes it easy to build Django apps that fit the Code for South Africa best practices and guidelines.
+Based on a template which makes it easy to build Django apps
 
 On the server:
+
 * easy to deploy on Heroku or Dokku
 * uses [dj-database-url](https://crate.io/packages/dj-database-url/) for database URL injection
 * uses [django-pipeline](https://django-pipeline.readthedocs.org/en/latest/) for asset compilation and fingerprinting
@@ -20,31 +19,14 @@ On the server:
 * cookies for session storage
 
 On the client:
-* Code for South Africa app templates and layouts
+
 * JQuery
 * Google Analytics
 * Bootstrap
 * FontAwesome
 
-Setting up the template
------------------------
-
-Create a new repository on Github. Everywhere you see ``$NEW_PROJECT_NAME`` in the following script, replace it with the name of the repository you just created.
-
-```
-git clone git@github.com:code4sa/django-template.git $NEW_PROJECT_NAME
-cd $NEW_PROJECT_NAME
-
-virtualenv --no-site-packages env
-source env/bin/activate
-pip install -r requirements.txt
-```
-
-Edit ``code4sa/settings.py`` and set some options
-
-* ``GOOGLE_ANALYTICS_ID`` to the GA tracking code
-
-Finally, setup the database:
+Setting up
+----------
 
 ```
 python manage.py migrate
@@ -52,8 +34,8 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-Using the template
-------------------
+Development
+-----------
 
 * Put javascript into ``code4sa/static/javascript/app.js``
 * Put SCSS stylesheets into ``code4sa/static/stylesheets/app.scss``
@@ -68,7 +50,6 @@ Production deployment assumes you're running on Heroku.
 You will need:
 
 * a django secret key
-* a New Relic license key
 * a cool app name
 
 ```bash

@@ -1,5 +1,5 @@
 """
-Django settings for code4sa project.
+Django settings for publicpeople project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     'pipeline',
     'django_extensions',
 
-    'code4sa',
+    'publicpeople',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,9 +56,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'code4sa.urls'
+ROOT_URLCONF = 'publicpeople.urls'
 
-WSGI_APPLICATION = 'code4sa.wsgi.application'
+WSGI_APPLICATION = 'publicpeople.wsgi.application'
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 
@@ -100,7 +100,7 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
-                "code4sa.context_processors.google_analytics",
+                "publicpeople.context_processors.google_analytics",
             ],
         },
     },
@@ -126,8 +126,8 @@ STATICFILES_FINDERS = (
 )
 
 PYSCSS_LOAD_PATHS = [
-    os.path.join(BASE_DIR, 'code4sa', 'static'),
-    os.path.join(BASE_DIR, 'code4sa', 'static', 'bower_components'),
+    os.path.join(BASE_DIR, 'publicpeople', 'static'),
+    os.path.join(BASE_DIR, 'publicpeople', 'static', 'bower_components'),
 ]
 
 PIPELINE = {
@@ -152,13 +152,13 @@ PIPELINE = {
     'CSS_COMPRESSOR': None,
     'JS_COMPRESSOR': None,
     'COMPILERS': (
-        'code4sa.pipeline.PyScssCompiler',
+        'publicpeople.pipeline.PyScssCompiler',
     ),
 }
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'code4sa.pipeline.GzipManifestPipelineStorage'
+STATICFILES_STORAGE = 'publicpeople.pipeline.GzipManifestPipelineStorage'
 
 
 # Logging

@@ -1,15 +1,15 @@
 {
-  "name": "code4sa-django-template",
+  "name": "public-people",
   "version": "0.0.1",
   "authors": [
-    "Greg Kempe <greg@code4sa.org>"
+    "JD Bothma <jbothma@gmail.com>"
   ],
-  "description": "Code4SA Django Template",
+  "description": "Public People of South Africa",
   "moduleType": [
     "globals"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/Code4SA/django-template",
+  "homepage": "https://github.com/public-people",
   "private": true,
   "ignore": [
     "**/.*",
