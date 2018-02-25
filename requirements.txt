@@ -2,12 +2,15 @@ Django==1.11.8
 Werkzeug==0.10.1
 dj-database-url==0.3.0
 django-extensions==1.9.6
+django_filter==1.1.0
 django-pipeline==1.6.13
+djangorestframework==3.7.7
 enum34==1.0.4
 futures==3.0.2
 gevent==1.0.1
 greenlet==0.4.5
 gunicorn==19.2.1
+Markdown==2.6.11
 git+https://github.com/mysociety/multiple-django-popolo-sources.git@84ea209
 -e git+https://github.com/public-people/django-popolo.git#egg=django-popolo
 newrelic==2.46.0.37

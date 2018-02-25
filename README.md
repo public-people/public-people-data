@@ -69,3 +69,9 @@ License
 -------
 
 MIT License
+
+Attribution
+-----------
+
+- Repo structure based on https://github.com/openupsa/django-template
+- REST API based on https://github.com/openpolis/popolorest/blob/master/popolorest/views.py
