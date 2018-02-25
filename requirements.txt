@@ -8,8 +8,8 @@ futures==3.0.2
 gevent==1.0.1
 greenlet==0.4.5
 gunicorn==19.2.1
-multiple-django-popolo-sources==0.0.3
-git+https://github.com/mysociety/multiple-django-popolo-sources.git#84ea209
+git+https://github.com/mysociety/multiple-django-popolo-sources.git@84ea209
+-e git+https://github.com/mysociety/django-popolo.git@9c4bd38#egg=django-popolo
 newrelic==2.46.0.37
 pathlib==1.0.1
 psycopg2==2.6
