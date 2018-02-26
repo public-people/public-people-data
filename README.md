@@ -45,24 +45,31 @@ Development
 Production deployment
 ---------------------
 
-Production deployment assumes you're running on Heroku.
+Production deployment is based on running the app on dokku
 
-You will need:
-
-* a django secret key
-* a cool app name
+### Intitial deployment
 
 ```bash
-heroku create
-heroku addons:add heroku-postgresql
-heroku config:set DJANGO_DEBUG=false \
-                  DISABLE_COLLECTSTATIC=1 \
-                  DJANGO_SECRET_KEY=some-secret-key \
-                  NEW_RELIC_APP_NAME=cool app name \
-                  NEW_RELIC_LICENSE_KEY=new relic license key
-git push heroku master
-heroku run python manage.py migrate
-heroku run python manage.py createsuperuser
+dokku apps:create publicpeople
+dokku config:set DATABASE_URL=postgresql://.../publicpeople \
+                 DJANGO_DEBUG=false \
+                 DISABLE_COLLECTSTATIC=1 \
+                 DJANGO_SECRET_KEY=some-secret-key \
+                 NEW_RELIC_APP_NAME=cool app name \
+                 NEW_RELIC_LICENSE_KEY=new relic license key
+```
+
+After pushing to the dokku git remote:
+
+```
+dokku run python manage.py migrate
+dokku run python manage.py createsuperuser
+```
+
+### Regular change deployment
+
+```
+git push dokku master
 ```
 
 License
