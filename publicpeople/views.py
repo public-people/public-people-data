@@ -5,10 +5,11 @@ from popolo.models import (
     Post,
     Area,
 )
+from django.contrib.contenttypes.models import ContentType
 from rest_framework import viewsets, serializers
 
 
-class PersonSerializer(serializers.ModelSerializer):
+class PersonSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Person
         fields = '__all__'
@@ -19,7 +20,7 @@ class PersonViewSet(viewsets.ModelViewSet):
     serializer_class = PersonSerializer
 
 
-class MembershipSerializer(serializers.ModelSerializer):
+class MembershipSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Membership
         fields = '__all__'
@@ -30,7 +31,7 @@ class MembershipViewSet(viewsets.ModelViewSet):
     serializer_class = MembershipSerializer
 
 
-class OrganizationSerializer(serializers.ModelSerializer):
+class OrganizationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Organization
         fields = '__all__'
@@ -41,7 +42,7 @@ class OrganizationViewSet(viewsets.ModelViewSet):
     serializer_class = OrganizationSerializer
 
 
-class PostSerializer(serializers.ModelSerializer):
+class PostSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Post
         fields = '__all__'
@@ -52,7 +53,7 @@ class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
 
 
-class AreaSerializer(serializers.ModelSerializer):
+class AreaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Area
         fields = '__all__'
@@ -61,3 +62,14 @@ class AreaSerializer(serializers.ModelSerializer):
 class AreaViewSet(viewsets.ModelViewSet):
     queryset = Area.objects.all()
     serializer_class = AreaSerializer
+
+
+class ContentTypeSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = ContentType
+        fields = '__all__'
+
+
+class ContentTypeViewSet(viewsets.ModelViewSet):
+    queryset = ContentType.objects.all()
+    serializer_class = ContentTypeSerializer

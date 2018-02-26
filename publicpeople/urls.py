@@ -8,6 +8,7 @@ from .views import (
     MembershipViewSet,
     PostViewSet,
     AreaViewSet,
+    ContentTypeViewSet,
 )
 
 # Routers provide an easy way of automatically determining the URL conf
@@ -17,6 +18,7 @@ router.register(r'organizations', OrganizationViewSet)
 router.register(r'memberships', MembershipViewSet)
 router.register(r'posts', PostViewSet)
 router.register(r'areas', AreaViewSet)
+router.register(r'contenttypes', ContentTypeViewSet)
 
 urlpatterns = [
 
