@@ -9,6 +9,8 @@ from .views import (
     PostViewSet,
     AreaViewSet,
     ContentTypeViewSet,
+    LinkToPopoloSourceViewSet,
+    PopoloSourceViewSet,
 )
 
 # Routers provide an easy way of automatically determining the URL conf
@@ -19,6 +21,8 @@ router.register(r'memberships', MembershipViewSet)
 router.register(r'posts', PostViewSet)
 router.register(r'areas', AreaViewSet)
 router.register(r'contenttypes', ContentTypeViewSet)
+router.register(r'linktopopolosource', LinkToPopoloSourceViewSet)
+router.register(r'popolosource', PopoloSourceViewSet)
 
 urlpatterns = [
 
