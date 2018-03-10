@@ -62,14 +62,21 @@ dokku config:set DATABASE_URL=postgresql://.../publicpeople \
 After pushing to the dokku git remote:
 
 ```
-dokku run python manage.py migrate
-dokku run python manage.py createsuperuser
+dokku run publicpeople python manage.py migrate
+dokku run publicpeople python manage.py createsuperuser
 ```
 
 ### Regular change deployment
 
 ```
 git push dokku master
+```
+
+Updating popolo data
+--------------------
+
+```
+dokku run publicpeople python app/manage.py popolo_sources_update https://www.pa.org.za/media_root/popolo_json/pombola.json
 ```
 
 License

@@ -48,12 +48,14 @@ INSTALLED_APPS = (
 
     'publicpeople',
 
+    'corsheaders',
     'rest_framework',
     'django_filters',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -68,6 +70,11 @@ WSGI_APPLICATION = 'publicpeople.wsgi.application'
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_METHODS = (
+    'GET',
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
