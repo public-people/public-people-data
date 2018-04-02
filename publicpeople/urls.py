@@ -1,5 +1,7 @@
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views import generic
+from material.frontend import urls as frontend_urls
 
 from rest_framework import routers
 from .views import (
@@ -32,4 +34,8 @@ urlpatterns = [
 
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+
+    url(r'^$', generic.RedirectView.as_view(url='/workflow/', permanent=False)),
+    url(r'', include(frontend_urls)),
 ]

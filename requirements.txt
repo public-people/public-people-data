@@ -4,7 +4,9 @@ dj-database-url==0.3.0
 django_cors_headers==2.2.0
 django-extensions==1.9.6
 django_filter==1.1.0
+django_material==1.2.2
 django-pipeline==1.6.13
+django_viewflow==1.2.2
 djangorestframework==3.7.7
 enum34==1.0.4
 futures==3.0.2
@@ -19,5 +21,6 @@ pathlib==1.0.1
 psycopg2==2.6
 pyScss==1.3.4
 six==1.9.0
+social-auth-app-django==2.1.0
 whitenoise==1.0.6
 wsgiref==0.1.2
