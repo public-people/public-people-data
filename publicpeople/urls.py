@@ -4,6 +4,7 @@ from django.contrib import admin
 from rest_framework import routers
 from .views import (
     PersonSearchListView,
+    PersonView,
     PersonViewSet,
     OrganizationViewSet,
     MembershipViewSet,
@@ -27,6 +28,7 @@ router.register(r'popolosource', PopoloSourceViewSet)
 
 urlpatterns = [
     url('^$', PersonSearchListView.as_view(), name='person_list'),
+    url('^person/(?P<person_id>\d+)-(?P<name_slug>[\w-]+)', PersonView.as_view(), name='person'),
 
     url(r'^admin/', admin.site.urls),
 

@@ -8,7 +8,7 @@
 <h1>Persons</h1>
 <ul>
   {% for person in object_list %}
-  <li>{{ person.name }}</li>
+  <li><a href="{{ person.url }}">{{ person.obj.name }}</a></li>
   {% endfor %}
 </ul>
 

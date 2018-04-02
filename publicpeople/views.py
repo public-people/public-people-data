@@ -1,7 +1,7 @@
 from popolo.models import (
-    Person,
     Organization,
     Membership,
+    Person,
     Post,
     Area,
 )
@@ -12,6 +12,19 @@ import operator
 from django.db.models import Q
 from functools import reduce
 from django.views.generic.list import ListView
+from django.utils.text import slugify
+from django.views.generic import TemplateView
+from django.shortcuts import get_object_or_404
+from django.urls import reverse
+
+
+class PersonView(TemplateView):
+    template_name = "person.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(TemplateView, self).get_context_data(**kwargs)
+        context['person'] = get_object_or_404(Person, pk=kwargs['person_id'])
+        return context
 
 
 class PersonSearchListView(ListView):
@@ -34,8 +47,20 @@ class PersonSearchListView(ListView):
 
         return result
 
+    def get_context_data(self, **kwargs):
+        def url(obj):
+            return reverse('person', kwargs={
+                'person_id': obj.id,
+                'name_slug': slugify(obj.name),
+            })
+        data = super(PersonSearchListView, self).get_context_data(**kwargs)
+        object_list = data['object_list']
+        object_list = [{'obj': o, 'url': url(o)} for o in object_list]
+        data['object_list'] = object_list
+        return data
 
-## API VIEWS
+
+# API VIEWS
 
 class PersonSerializer(serializers.ModelSerializer):
     class Meta:
