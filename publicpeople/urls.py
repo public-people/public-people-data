@@ -3,6 +3,7 @@ from django.contrib import admin
 
 from rest_framework import routers
 from .views import (
+    PersonSearchListView,
     PersonViewSet,
     OrganizationViewSet,
     MembershipViewSet,
@@ -25,7 +26,7 @@ router.register(r'linktopopolosource', LinkToPopoloSourceViewSet)
 router.register(r'popolosource', PopoloSourceViewSet)
 
 urlpatterns = [
-
+    url('^$', PersonSearchListView.as_view(), name='person_list'),
 
     url(r'^admin/', admin.site.urls),
 

@@ -8,6 +8,34 @@ from popolo.models import (
 from popolo_sources.models import LinkToPopoloSource, PopoloSource
 from django.contrib.contenttypes.models import ContentType
 from rest_framework import viewsets, serializers
+import operator
+from django.db.models import Q
+from functools import reduce
+from django.views.generic.list import ListView
+
+
+class PersonSearchListView(ListView):
+    """
+    Display a Person List page filtered by the search query.
+    """
+    model = Person
+    paginate_by = 10
+
+    def get_queryset(self):
+        result = super(PersonSearchListView, self).get_queryset()
+
+        query = self.request.GET.get('q')
+        if query:
+            query_list = query.split()
+            result = result.filter(
+                reduce(operator.and_,
+                       (Q(name__icontains=q) for q in query_list))
+            )
+
+        return result
+
+
+## API VIEWS
 
 class PersonSerializer(serializers.ModelSerializer):
     class Meta:
