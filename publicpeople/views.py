@@ -38,6 +38,12 @@ class PersonView(TemplateView):
                     'membership': membership,
                     'date': membership.end_date,
                 })
+            if not (membership.start_date or membership.end_date):
+                events.append({
+                    'type': 'for all known time',
+                    'membership': membership,
+                    'date': None,
+                })
         events = sorted(events, key=lambda e: e['date'], reverse=True)
 
         context = super(TemplateView, self).get_context_data(**kwargs)
