@@ -22,8 +22,25 @@ class PersonView(TemplateView):
     template_name = "person.html"
 
     def get_context_data(self, **kwargs):
+        person = get_object_or_404(Person, pk=kwargs['person_id'])
+        memberships = person.memberships.order_by('end_date')
+        events = []
+        for membership in memberships:
+            events.append({
+                'type': 'started',
+                'membership': membership,
+                'date': membership.start_date,
+            })
+            events.append({
+                'type': 'ended',
+                'membership': membership,
+                'date': membership.end_date,
+            })
+        events = sorted(events, key=lambda e: e['date'], reverse=True)
+
         context = super(TemplateView, self).get_context_data(**kwargs)
-        context['person'] = get_object_or_404(Person, pk=kwargs['person_id'])
+        context['person'] = person
+        context['events'] = events
         return context
 
 
