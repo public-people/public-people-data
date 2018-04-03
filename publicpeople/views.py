@@ -26,16 +26,18 @@ class PersonView(TemplateView):
         memberships = person.memberships.order_by('end_date')
         events = []
         for membership in memberships:
-            events.append({
-                'type': 'started',
-                'membership': membership,
-                'date': membership.start_date,
-            })
-            events.append({
-                'type': 'ended',
-                'membership': membership,
-                'date': membership.end_date,
-            })
+            if membership.start_date:
+                events.append({
+                    'type': 'started',
+                    'membership': membership,
+                    'date': membership.start_date,
+                })
+            if membership.end_date:
+                events.append({
+                    'type': 'ended',
+                    'membership': membership,
+                    'date': membership.end_date,
+                })
         events = sorted(events, key=lambda e: e['date'], reverse=True)
 
         context = super(TemplateView, self).get_context_data(**kwargs)
