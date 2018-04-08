@@ -52,12 +52,27 @@ class PersonView(TemplateView):
                 'article': article,
                 'date': article['published_at'],
             })
+        first_last_name = get_first_last_name(person.name)
+        if first_last_name != person.name:
+            for article in NewsSearch(first_last_name):
+                events.append({
+                    'type': 'article',
+                    'article': article,
+                    'date': article['published_at'],
+                })
         events = sorted(events, key=lambda e: e['date'], reverse=True)
 
         context = super(TemplateView, self).get_context_data(**kwargs)
         context['person'] = person
         context['events'] = events
         return context
+
+
+def get_first_last_name(full_name):
+    names = full_name.split(' ')
+    if len(names) == 1:
+        return names[0]
+    return "%s %s" % (names[0], names[-1])
 
 
 class PersonSearchListView(ListView):

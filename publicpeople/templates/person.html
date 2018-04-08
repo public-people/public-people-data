@@ -3,7 +3,7 @@
 <ul>
   {% for event in events %}
   <li>
-    {{ event.date }} -
+    {{ event.date|slice:":10" }} -
     {% if event.type == 'article' %}
     Mentioned in {{ event.article.collection.label }}
     <a href="{{ event.article.source_url }}">{{ event.article.title }}</a>

@@ -1,4 +1,7 @@
 import requests
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class NewsSearch():
@@ -7,13 +10,14 @@ class NewsSearch():
         self.idx = None
         self.items = None
         self.next_url = None
+        self.session = requests.Session()
 
     def __iter__(self):
         return self
 
     def next(self):
         if self.items is None:
-            r = requests.get('https://alephapi.public-people.techforgood.org.za/api/2/search',
+            r = self.session.get('https://alephapi.public-people.techforgood.org.za/api/2/search',
                              params={
                                  'q': '"%s"' % self.query,
                                  'sort': 'published_at:desc',
@@ -27,7 +31,7 @@ class NewsSearch():
 
         if self.idx == len(self.items):
             if self.next_url:
-                r = requests.get(self.next_url)
+                r = self.session.get(self.next_url)
                 r.raise_for_status()
                 response = r.json()
                 self.next_url = response['next']
