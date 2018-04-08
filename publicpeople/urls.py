@@ -1,5 +1,6 @@
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.decorators.cache import cache_page
 
 from rest_framework import routers
 from .views import (
@@ -15,6 +16,10 @@ from .views import (
     PopoloSourceViewSet,
 )
 
+
+CACHE_SECS = 60 * 60 * 24
+
+
 # Routers provide an easy way of automatically determining the URL conf
 router = routers.DefaultRouter()
 router.register(r'persons', PersonViewSet)
@@ -27,8 +32,12 @@ router.register(r'linktopopolosource', LinkToPopoloSourceViewSet)
 router.register(r'popolosource', PopoloSourceViewSet)
 
 urlpatterns = [
-    url('^$', PersonSearchListView.as_view(), name='person_list'),
-    url('^person/(?P<person_id>\d+)-(?P<name_slug>[\w-]+)', PersonView.as_view(), name='person'),
+    url('^$',
+        cache_page(CACHE_SECS)(PersonSearchListView.as_view()),
+        name='person_list'),
+    url('^person/(?P<person_id>\d+)-(?P<name_slug>[\w-]+)',
+        cache_page(CACHE_SECS)(PersonView.as_view()),
+        name='person'),
 
     url(r'^admin/', admin.site.urls),
 

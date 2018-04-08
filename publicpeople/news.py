@@ -21,7 +21,7 @@ class NewsSearch():
                              params={
                                  'q': '"%s"' % self.query,
                                  'sort': 'published_at:desc',
-                                 'limit': 100,
+                                 'limit': 500,
                              })
             r.raise_for_status()
             response = r.json()
