@@ -17,6 +17,7 @@ from django.views.generic import TemplateView
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from .news import NewsSearch
+import json
 
 
 class PersonView(TemplateView):
@@ -46,8 +47,9 @@ class PersonView(TemplateView):
                     'date': None,
                 })
 
+        news_events = []
         for article in NewsSearch(person.name):
-            events.append({
+            news_events.append({
                 'type': 'article',
                 'article': article,
                 'date': article['published_at'],
@@ -55,11 +57,13 @@ class PersonView(TemplateView):
         first_last_name = get_first_last_name(person.name)
         if first_last_name != person.name:
             for article in NewsSearch(first_last_name):
-                events.append({
+                news_events.append({
                     'type': 'article',
                     'article': article,
                     'date': article['published_at'],
                 })
+        news_events = unique(news_events)
+        events = events + news_events
         events = sorted(events, key=lambda e: e['date'], reverse=True)
 
         context = super(TemplateView, self).get_context_data(**kwargs)
@@ -73,6 +77,13 @@ def get_first_last_name(full_name):
     if len(names) == 1:
         return names[0]
     return "%s %s" % (names[0], names[-1])
+
+
+def unique(list_of_dicts):
+    uniques = {}
+    for val in list_of_dicts:
+        uniques[json.dumps(val, sort_keys=True)] = val
+    return uniques.values()
 
 
 class PersonSearchListView(ListView):
