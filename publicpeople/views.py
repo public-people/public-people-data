@@ -1,13 +1,125 @@
 from popolo.models import (
-    Person,
     Organization,
     Membership,
+    Person,
     Post,
     Area,
 )
 from popolo_sources.models import LinkToPopoloSource, PopoloSource
 from django.contrib.contenttypes.models import ContentType
 from rest_framework import viewsets, serializers
+import operator
+from django.db.models import Q
+from functools import reduce
+from django.views.generic.list import ListView
+from django.utils.text import slugify
+from django.views.generic import TemplateView
+from django.shortcuts import get_object_or_404
+from django.urls import reverse
+from .news import NewsSearch
+import json
+
+
+class PersonView(TemplateView):
+    template_name = "person.html"
+
+    def get_context_data(self, **kwargs):
+        person = get_object_or_404(Person, pk=kwargs['person_id'])
+        memberships = person.memberships.order_by('end_date')
+        events = []
+        for membership in memberships:
+            if membership.start_date:
+                events.append({
+                    'type': 'started',
+                    'membership': membership,
+                    'date': membership.start_date,
+                })
+            if membership.end_date:
+                events.append({
+                    'type': 'ended',
+                    'membership': membership,
+                    'date': membership.end_date,
+                })
+            if not (membership.start_date or membership.end_date):
+                events.append({
+                    'type': 'for all known time',
+                    'membership': membership,
+                    'date': None,
+                })
+
+        news_events = []
+        for article in NewsSearch(person.name):
+            news_events.append({
+                'type': 'article',
+                'article': article,
+                'date': article['published_at'],
+            })
+        first_last_name = get_first_last_name(person.name)
+        if first_last_name != person.name:
+            for article in NewsSearch(first_last_name):
+                news_events.append({
+                    'type': 'article',
+                    'article': article,
+                    'date': article['published_at'],
+                })
+        news_events = unique(news_events)
+        events = events + news_events
+        events = sorted(events, key=lambda e: e['date'], reverse=True)
+
+        context = super(TemplateView, self).get_context_data(**kwargs)
+        context['person'] = person
+        context['events'] = events
+        return context
+
+
+def get_first_last_name(full_name):
+    names = full_name.split(' ')
+    if len(names) == 1:
+        return names[0]
+    return "%s %s" % (names[0], names[-1])
+
+
+def unique(list_of_dicts):
+    uniques = {}
+    for val in list_of_dicts:
+        uniques[json.dumps(val, sort_keys=True)] = val
+    return uniques.values()
+
+
+class PersonSearchListView(ListView):
+    """
+    Display a Person List page filtered by the search query.
+    """
+    model = Person
+    paginate_by = 10
+
+    def get_queryset(self):
+        result = super(PersonSearchListView, self).get_queryset()
+
+        query = self.request.GET.get('q')
+        if query:
+            query_list = query.split()
+            result = result.filter(
+                reduce(operator.and_,
+                       (Q(name__icontains=q) for q in query_list))
+            )
+
+        return result
+
+    def get_context_data(self, **kwargs):
+        def url(obj):
+            return reverse('person', kwargs={
+                'person_id': obj.id,
+                'name_slug': slugify(obj.name),
+            })
+        data = super(PersonSearchListView, self).get_context_data(**kwargs)
+        object_list = data['object_list']
+        object_list = [{'obj': o, 'url': url(o)} for o in object_list]
+        data['object_list'] = object_list
+        return data
+
+
+# API VIEWS
 
 class PersonSerializer(serializers.ModelSerializer):
     class Meta:

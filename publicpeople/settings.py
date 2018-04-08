@@ -201,7 +201,10 @@ LOGGING = {
         # },
         'django': {
             'level': 'DEBUG' if DEBUG else 'INFO',
-        }
+        },
+        "urllib3": {
+            "level": "DEBUG",
+        },
     }
 }
 
