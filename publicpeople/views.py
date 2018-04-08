@@ -16,6 +16,7 @@ from django.utils.text import slugify
 from django.views.generic import TemplateView
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
+import requests
 
 
 class PersonView(TemplateView):
@@ -44,6 +45,20 @@ class PersonView(TemplateView):
                     'membership': membership,
                     'date': None,
                 })
+
+        r = requests.get('https://alephapi.public-people.techforgood.org.za/api/2/search',
+                         params={
+                             'q': '"%s"' % person.name,
+                             'sort': 'published_at',
+                             'limit': 1000,
+                         })
+        r.raise_for_status()
+        for article in r.json()['results']:
+            events.append({
+                'type': 'article',
+                'article': article,
+                'date': article['published_at'],
+            })
         events = sorted(events, key=lambda e: e['date'], reverse=True)
 
         context = super(TemplateView, self).get_context_data(**kwargs)
