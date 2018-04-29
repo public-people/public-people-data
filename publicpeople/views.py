@@ -1,9 +1,11 @@
 from popolo.models import (
     Organization,
     Membership,
-    Person,
     Post,
     Area,
+)
+from .models import(
+    Person,
 )
 from popolo_sources.models import LinkToPopoloSource, PopoloSource
 from django.contrib.contenttypes.models import ContentType

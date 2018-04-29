@@ -7,8 +7,28 @@
 
 <h1>Persons</h1>
 <ul>
-  {% for person in object_list %}
-  <li><a href="{{ person.url }}">{{ person.obj.name }}</a></li>
+  {% for result_item in object_list %}
+  <li>
+    <a href="{{ result_item.url }}">{{ result_item.obj.name }}</a>
+
+    {% if result_item.obj.current_memberships %}
+    <p>Current memberships:</p>
+    <ul>
+      {% for membership in result_item.obj.current_memberships %}
+      <li>{{ membership.role }} of {{ membership.organization.name }}</li>
+      {% endfor %}
+    </ul>
+
+    {% elif result_item.obj.ended_memberships %}
+    <p>Last memberships:</p>
+    <ul>
+      {% for membership in result_item.obj.ended_memberships|slice:":3" %}
+      <li>{{ membership.role }} of {{ membership.organization.name }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+  </li>
   {% endfor %}
 </ul>
 
