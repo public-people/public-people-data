@@ -91,7 +91,7 @@ class PersonSearchListView(ListView):
     Display a Person List page filtered by the search query.
     """
     model = Person
-    paginate_by = 10
+    paginate_by = 20
 
     def get_queryset(self):
         result = super(PersonSearchListView, self).get_queryset()
@@ -116,6 +116,7 @@ class PersonSearchListView(ListView):
         object_list = data['object_list']
         object_list = [{'obj': o, 'url': url(o)} for o in object_list]
         data['object_list'] = object_list
+        data['q'] = self.request.GET.get('q') or ''
         return data
 
 
