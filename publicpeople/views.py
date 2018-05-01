@@ -124,26 +124,6 @@ class PersonSearchListView(ListView):
 
 # API VIEWS
 
-class PersonSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Person
-        fields = '__all__'
-
-
-class PersonViewSet(viewsets.ModelViewSet):
-    queryset = Person.objects.all()
-    serializer_class = PersonSerializer
-    search_fields = (
-        'name',
-        'other_names__name',
-        'family_name',
-        'given_name',
-        'additional_name',
-        'email'
-    )
-    filter_fields = search_fields
-
-
 class MembershipSerializer(serializers.ModelSerializer):
     class Meta:
         model = Membership
@@ -158,6 +138,51 @@ class MembershipViewSet(viewsets.ModelViewSet):
         'role',
         'person',
         'organization',
+    )
+    filter_fields = search_fields
+
+
+class PersonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Person
+        fields = (
+            "id",
+            "start_date",
+            "end_date",
+            "created_at",
+            "updated_at",
+            "name",
+            "family_name",
+            "given_name",
+            "additional_name",
+            "honorific_prefix",
+            "honorific_suffix",
+            "patronymic_name",
+            "sort_name",
+            "email",
+            "gender",
+            "birth_date",
+            "death_date",
+            "image",
+            "summary",
+            "biography",
+            "national_identity",
+            "memberships",
+        )
+
+    memberships = MembershipSerializer(many=True, read_only=True)
+
+
+class PersonViewSet(viewsets.ModelViewSet):
+    queryset = Person.objects.all()
+    serializer_class = PersonSerializer
+    search_fields = (
+        'name',
+        'other_names__name',
+        'family_name',
+        'given_name',
+        'additional_name',
+        'email'
     )
     filter_fields = search_fields
 
