@@ -1,4 +1,9 @@
-<h1>{{ person.name }}</h1>
+{% extends "layout.html" %}
+
+{% block title %}{{ person.name }} | Public People{% endblock %}
+{% block content %}
+
+<h2>{{ person.name }}</h2>
 
 <ul>
   {% for event in events %}
@@ -14,3 +19,5 @@
   </li>
   {% endfor %}
 </ul>
+
+{% endblock %}

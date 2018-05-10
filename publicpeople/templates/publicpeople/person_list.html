@@ -1,3 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}Public People{% endblock %}
+{% block content %}
+
+<p>Find people who are involved with running South Africa and learn about who they are.</p>
+
 <form id="searchform" action="{% url 'person_list' %}" method="get" accept-charset="utf-8">
   <button class="searchbutton" type="submit">
     <i class="fa fa-search"></i>
@@ -5,7 +12,7 @@
   <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search" value="{{ q }}">
 </form>
 
-<h1>Persons</h1>
+<h2>Persons</h2>
 <ul>
   {% for result_item in object_list %}
   <li>
@@ -47,3 +54,5 @@
   </span>
 </div>
 {% endif %}
+
+{% endblock %}
