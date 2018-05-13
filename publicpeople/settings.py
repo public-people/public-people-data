@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'django_extensions',
 
     'popolo',
+    'simple_history',
     'popolo_sources',
 
     'publicpeople',
@@ -53,7 +54,7 @@ INSTALLED_APPS = (
     'django_filters',
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -62,6 +63,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'simple_history.middleware.HistoryRequestMiddleware',
 )
 
 ROOT_URLCONF = 'publicpeople.urls'
