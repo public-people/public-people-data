@@ -1,5 +1,6 @@
 import requests
 import logging
+from django.conf import settings
 
 logger = logging.getLogger(__name__)
 
@@ -11,6 +12,9 @@ class NewsSearch():
         self.items = None
         self.next_url = None
         self.session = requests.Session()
+        self.session.headers.update({
+            'authorization': "ApiKey %s" % settings.ALEPH_READER_API_KEY,
+        })
 
     def __iter__(self):
         return self
@@ -18,11 +22,13 @@ class NewsSearch():
     def next(self):
         if self.items is None:
             r = self.session.get('https://alephapi.public-people.techforgood.org.za/api/2/search',
-                             params={
-                                 'q': '"%s"' % self.query,
-                                 'sort': 'published_at:desc',
-                                 'limit': 500,
-                             })
+                                 params={
+                                     'q': '"%s"' % self.query,
+                                     'sort': 'published_at:desc',
+                                     'limit': 500,
+                                 },
+                                 headers={
+                                 })
             r.raise_for_status()
             response = r.json()
             self.next_url = response['next']

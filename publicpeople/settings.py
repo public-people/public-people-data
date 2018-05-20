@@ -224,3 +224,5 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
 }
+
+ALEPH_READER_API_KEY = os.environ.get('ALEPH_READER_API_KEY', None)
