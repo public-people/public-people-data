@@ -14,6 +14,7 @@ from .views import (
     ContentTypeViewSet,
     LinkToPopoloSourceViewSet,
     PopoloSourceViewSet,
+    AboutView,
 )
 
 
@@ -38,6 +39,8 @@ urlpatterns = [
     url('^person/(?P<person_id>\d+)-(?P<name_slug>[\w-]+)',
         cache_page(CACHE_SECS)(PersonView.as_view()),
         name='person'),
+
+    url(r'^about$', AboutView.as_view()),
 
     url(r'^admin/', admin.site.urls),
 
