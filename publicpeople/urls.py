@@ -1,19 +1,22 @@
+from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.decorators.cache import cache_page
 
 from rest_framework import routers
 from .views import (
+    AboutView,
+    AreaViewSet,
+    ContactView,
+    ContentTypeViewSet,
+    LinkToPopoloSourceViewSet,
+    MembershipViewSet,
+    OrganizationViewSet,
     PersonSearchListView,
     PersonView,
     PersonViewSet,
-    OrganizationViewSet,
-    MembershipViewSet,
-    PostViewSet,
-    AreaViewSet,
-    ContentTypeViewSet,
-    LinkToPopoloSourceViewSet,
     PopoloSourceViewSet,
+    PostViewSet,
 )
 
 
@@ -39,9 +42,18 @@ urlpatterns = [
         cache_page(CACHE_SECS)(PersonView.as_view()),
         name='person'),
 
+    url(r'^about$', AboutView.as_view(), name='about'),
+    url(r'^contact$', ContactView.as_view(), name='contact'),
+
     url(r'^admin/', admin.site.urls),
 
 
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns

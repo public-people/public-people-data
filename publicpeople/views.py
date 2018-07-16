@@ -7,19 +7,21 @@ from popolo.models import (
 from .models import(
     Person,
 )
-from popolo_sources.models import LinkToPopoloSource, PopoloSource
+
+from .news import NewsSearch
 from django.contrib.contenttypes.models import ContentType
-from rest_framework import viewsets, serializers
-import operator
 from django.db.models import Q
-from functools import reduce
-from django.views.generic.list import ListView
-from django.utils.text import slugify
-from django.views.generic import TemplateView
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
-from .news import NewsSearch
+from django.utils.text import slugify
+from django.views.generic import TemplateView
+from django.views.generic.base import TemplateView
+from django.views.generic.list import ListView
+from functools import reduce
+from popolo_sources.models import LinkToPopoloSource, PopoloSource
+from rest_framework import viewsets, serializers
 import json
+import operator
 
 
 class PersonView(TemplateView):
@@ -248,8 +250,6 @@ class LinkToPopoloSourceViewSet(viewsets.ModelViewSet):
     serializer_class = LinkToPopoloSourceSerializer
 
 
-
-
 class PopoloSourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = PopoloSource
@@ -259,3 +259,11 @@ class PopoloSourceSerializer(serializers.ModelSerializer):
 class PopoloSourceViewSet(viewsets.ModelViewSet):
     queryset = PopoloSource.objects.all()
     serializer_class = PopoloSourceSerializer
+
+
+class AboutView(TemplateView):
+    template_name = "about.html"
+
+
+class ContactView(TemplateView):
+    template_name = "contact.html"
