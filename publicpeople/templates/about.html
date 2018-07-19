@@ -17,6 +17,26 @@
 
 <p>The longer-term goal is to build an ecosystem of loosely connected tools that each do what they do well, and also provide data exports to support other related tools and more in-depth investigation. We're explicitly trying not to build one big central network analysis hub combining all possible sources of information about someone or trying to visualise someone’s influence network.</p>
 
+<h4 id="known-issues">Known issues</h4>
+
+<ul>
+  <li>
+    It shows news articles that match a search for the person's first and last names as we have them in the data we get from http://pa.org.za. It's not intelligent about two people with the same name. So John Peter Smith and John James Smith will have all the same news listed for them, matching "John Smith".
+    <ul>
+      <li>If you encounter this a lot, let us know to know how urgent it is to solve.</li>
+    </ul>
+  </li>
+  <li>It searches for first and last name, so it won't find much news for "cyril ramaphosa" because his first and last name are Matamela Ramaphosa
+    <ul>
+      <li>When you find instances like this, please let us know at public.people.project@gmail.com so we can fix their "Preferred Name" to be the one used in the news.</li>
+      <li>Also let us know if someone's name has changed</li>
+    </ul>
+  </li>
+  <li>It doesn't help you with spelling mistakes so if you don't immediately find someone, try different spellings, or just parts of their name.</li>
+  <li>Their public job roles are from pa.org.za but our copy of that data is out of date right now - we'll start updating automatically soon</li>
+  <li>The pages for people mentioned very frequently in the news load very slowly right now. We'll fix this as soon as possible. Some, like Jacob Zuma, don't load at all.</li>
+</ul>
+
 <h3>Privacy</h3>
 
 <p>The people featured on Public People are those who choose a role in politics or public administration.</p>
