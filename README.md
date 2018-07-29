@@ -28,9 +28,20 @@ On the client:
 Setting up
 ----------
 
+[Create a database](https://gist.github.com/jbothma/8a9a30399c2091d89763bff0a1952da4)
+
+Then, the first time you run the server, run migrations and create a superuser
+
 ```
 python manage.py migrate
 python manage.py createsuperuser
+```
+
+See [Download and update Popolo data](#updating-popolo-data), running those commands without the `dokku run publicpeople` part.
+
+Then you can run the server
+
+```
 python manage.py runserver
 ```
 
@@ -74,6 +85,14 @@ git push dokku master
 
 Updating popolo data
 --------------------
+
+The first time, create the source
+
+```
+dokku run publicpeople python app/manage.py popolo_sources_update --create https://www.pa.org.za/media_root/popolo_json/pombola.json
+```
+
+Subsequently, just update (without `--create`)
 
 ```
 dokku run publicpeople python app/manage.py popolo_sources_update https://www.pa.org.za/media_root/popolo_json/pombola.json
