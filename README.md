@@ -112,7 +112,7 @@ The People API can be explored interactively at https://publicpeople.org.za/api/
 
 ### News API
 
-[An example query to the News API](https://alephapi.public-people.techforgood.org.za/api/2/search?q="ace magashule"&sort=published_at)
+[An example query to the News API](https://alephapi.public-people.techforgood.org.za/api/2/search?q=%22ace+magashule%22&sort=published_at)
 
 [News API documentation](https://github.com/alephdata/aleph/wiki/API)
 
