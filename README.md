@@ -1,21 +1,25 @@
 Public People
 =============
 
-From the template
--------------------
+This django app provides a basic user interface showing news and public
+post/membership history about public people. It also provides an API for
+retrieving the identity and post data about persons, and an interface for
+administrators to manage the person data.
 
-Based on a template which makes it easy to build Django apps
+Person data is in the [Popolo standard](http://www.popoloproject.com/).
+We get our baseline data from [Peoples' Assembly](https://pa.org.za/help/api),
+but we can correct it directly in this database.
+
+How this project is organised
+-----------------------------
 
 On the server:
 
-* easy to deploy on Heroku or Dokku
 * uses [dj-database-url](https://crate.io/packages/dj-database-url/) for database URL injection
 * uses [django-pipeline](https://django-pipeline.readthedocs.org/en/latest/) for asset compilation and fingerprinting
 * uses [pyscss](http://pyscss.readthedocs.org/en/latest/) for compiling SCSS to CSS
-* New Relic for monitoring
 * Bower to install assets
 * better debugging with ``python manage.py runserver_plus`` from [django-extensions](http://django-extensions.readthedocs.org/en/latest/)
-* sane logging to stdout
 * cookies for session storage
 
 On the client:
@@ -37,7 +41,8 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-See [Download and update Popolo data](#updating-popolo-data), running those commands without the `dokku run publicpeople` part.
+See [Download and update Popolo data](#updating-popolo-data), running those
+commands without the `dokku run publicpeople` part.
 
 Then you can run the server
 
@@ -97,6 +102,19 @@ Subsequently, just update (without `--create`)
 ```
 dokku run publicpeople python app/manage.py popolo_sources_update https://www.pa.org.za/media_root/popolo_json/pombola.json
 ```
+
+Accessing the data
+------------------
+
+### People API
+
+The People API can be explored interactively at https://publicpeople.org.za/api/
+
+### News API
+
+An example query to the News API is https://alephapi.public-people.techforgood.org.za/api/2/search?q="ace magashule"&sort=published_at
+
+It is documented at https://github.com/alephdata/aleph/wiki/API
 
 License
 -------
