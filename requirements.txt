@@ -13,7 +13,7 @@ gevent==1.2.1
 greenlet==0.4.12
 gunicorn==19.5.0
 Markdown==2.6.11
-git+https://github.com/mysociety/multiple-django-popolo-sources.git@84ea209
+-e git+https://github.com/public-people/multiple-django-popolo-sources.git@master#egg=multiple-django-popolo-sources
 -e git+https://github.com/public-people/django-popolo.git@public-people#egg=django-popolo
 newrelic==2.86.1.66
 pathlib==1.0.1
