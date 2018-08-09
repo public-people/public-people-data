@@ -36,6 +36,8 @@ Clone this git repository
 
 [Create a project python 2 virtual environment](https://realpython.com/python-virtual-environments-a-primer/#using-virtual-environments) in the repository directory and activate it
 
+Install python dependencies using `pip install -r requirements.txt`
+
 [Create a database](https://gist.github.com/jbothma/8a9a30399c2091d89763bff0a1952da4)
 
 Then, the first time you run the server, run migrations and create a superuser
