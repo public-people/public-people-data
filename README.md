@@ -41,14 +41,27 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-See [Download and update Popolo data](#updating-popolo-data), running those
-commands without the `dokku run publicpeople` part.
+Update popolo data:
+
+The first time, create the source
+
+```
+python manage.py popolo_sources_update --create https://www.pa.org.za/media_root/popolo_json/pombola.json
+```
+
+Subsequently, just update (without `--create`)
+
+```
+python manage.py popolo_sources_update https://www.pa.org.za/media_root/popolo_json/pombola.json
+```
 
 Then you can run the server
 
 ```
 python manage.py runserver
 ```
+
+You can log in as your new superuser and explore the data using the admin interface at http://localhost:8000/admin and the public interface at http://localhost:8000/
 
 Development
 -----------
