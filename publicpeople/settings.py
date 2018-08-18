@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'corsheaders',
     'rest_framework',
     'django_filters',
+    'graphene_django',
 )
 
 MIDDLEWARE = (
@@ -245,4 +246,8 @@ REST_FRAMEWORK = {
         'rest_framework.filters.SearchFilter',
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
+}
+
+GRAPHENE = {
+    'SCHEMA': 'publicpeople.schema.schema'
 }

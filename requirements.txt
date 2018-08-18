@@ -10,6 +10,7 @@ djangorestframework==3.7.7
 enum34==1.0.4
 futures==3.0.2
 gevent==1.2.1
+graphene_django==2.1.0
 greenlet==0.4.12
 gunicorn==19.5.0
 Markdown==2.6.11
