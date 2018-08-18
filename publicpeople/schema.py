@@ -67,25 +67,8 @@ class AreaI18NameType(DjangoObjectType):
         model = AreaI18Name
 
 class Query(graphene.ObjectType):
-    all_persons = graphene.List(PersonType)
-    all_organizations = graphene.List(OrganizationType)
-    all_posts = graphene.List(PostType)
-    all_memberships = graphene.List(MembershipType)
-
     person = graphene.Field(PersonType,
                             id=graphene.Int())
-
-    def resolve_all_persons(self, info, **kwargs):
-        return Person.objects.all()
-
-    def resolve_all_organizations(self, info, **kwargs):
-        return Organization.objects.all()
-
-    def resolve_all_posts(self, info, **kwargs):
-        return Post.objects.all()
-
-    def resolve_all_membershops(self, info, **kwargs):
-        return Membership.objects.all()
 
     def resolve_person(self, info, **kwargs):
         id = kwargs.get('id')
