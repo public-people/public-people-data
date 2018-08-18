@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.views.decorators.cache import cache_page
 
 from rest_framework import routers
+from graphene_django.views import GraphQLView
 from .views import (
     AboutView,
     AreaViewSet,
@@ -50,6 +51,8 @@ urlpatterns = [
 
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    url(r'^graphql', GraphQLView.as_view(graphiql=True)),
 ]
 
 if settings.DEBUG:
