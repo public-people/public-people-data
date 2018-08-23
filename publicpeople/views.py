@@ -15,7 +15,6 @@ from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.utils.text import slugify
 from django.views.generic import TemplateView
-from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from functools import reduce
 from popolo_sources.models import LinkToPopoloSource, PopoloSource
@@ -52,20 +51,13 @@ class PersonView(TemplateView):
                 })
 
         news_events = []
-        for article in NewsSearch(person.name):
+        first_last_name = get_first_last_name(person.name)
+        for article in NewsSearch(first_last_name):
             news_events.append({
                 'type': 'article',
                 'article': article,
                 'date': article['published_at'],
             })
-        first_last_name = get_first_last_name(person.name)
-        if first_last_name != person.name:
-            for article in NewsSearch(first_last_name):
-                news_events.append({
-                    'type': 'article',
-                    'article': article,
-                    'date': article['published_at'],
-                })
         news_events = unique(news_events)
         events = events + news_events
         events = sorted(events, key=lambda e: e['date'], reverse=True)
@@ -73,6 +65,7 @@ class PersonView(TemplateView):
         context = super(TemplateView, self).get_context_data(**kwargs)
         context['person'] = person
         context['events'] = events
+        context['name_query'] = first_last_name
         return context
 
 
