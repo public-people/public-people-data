@@ -22,6 +22,24 @@ from rest_framework import viewsets, serializers
 import json
 import operator
 
+FEATURED_NAMES = [
+    'Mduduzi Manana',
+    'Jeff Radebe',
+    'Faith Muthambi',
+    'Trevor Manuel',
+    'Vytjie Mentor',
+    'Julius Malema',
+    'Lindiwe Mazibuko',
+    'Pravin Gordhan',
+    'Manny de Freitas',
+    'Magdalene Moonsamy',
+    'Cheryllyn Dudley',
+    'Qedani Dorothy Mahlangu',
+    'Tasneem Motara',
+    'Mary-Ann Dunjwa',
+    'Leigh-Ann Mathys',
+]
+
 
 class PersonView(TemplateView):
     template_name = "person.html"
@@ -100,6 +118,8 @@ class PersonSearchListView(ListView):
                 reduce(operator.and_,
                        (Q(name__icontains=q) for q in query_list))
             )
+        else:
+            result = result.filter(name__in=FEATURED_NAMES)
 
         return result
 
