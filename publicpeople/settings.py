@@ -25,7 +25,7 @@ if DEBUG:
 else:
     SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
-GOOGLE_TAG_MGR_ID = (not DEBUG) and "GTM-W5PTM6R"
+GOOGLE_TAG_MGR_ID = "GTM-W5PTM6R"
 
 ALLOWED_HOSTS = ['*']
 
