@@ -136,7 +136,7 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
-                "publicpeople.context_processors.google_analytics",
+                "publicpeople.context_processors.google_tag_manager",
             ],
         },
     },
