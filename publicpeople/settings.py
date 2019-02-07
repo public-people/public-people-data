@@ -26,7 +26,7 @@ else:
     SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # XXX set me
-GOOGLE_ANALYTICS_ID = "UA-114651981-1"
+GOOGLE_TAG_MGR_ID = not DEBUG && "GTM-W5PTM6R"
 
 ALLOWED_HOSTS = ['*']
 
