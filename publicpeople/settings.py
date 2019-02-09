@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'pipeline',
     'django_extensions',
 
+    'ajax_select',
     'popolo',
     'simple_history',
     'popolo_sources',
