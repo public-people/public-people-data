@@ -8,10 +8,12 @@ News matching "{{ name_query }}"
 
 {% include 'snippets/pager.html' %}
 
+{% for date_group in date_groups %}
+<div>{{ date_group.date }}</div>
+
 <ul>
-  {% for event in events %}
+  {% for event in date_group.events %}
   <li>
-    {{ event.date|slice:":10" }} -
     {% if event.type == 'article' %}
     Mentioned in {{ event.article.collection.label }}
     <a href="{{ event.article.source_url }}">{{ event.article.title }}</a>
@@ -22,6 +24,8 @@ News matching "{{ name_query }}"
   </li>
   {% endfor %}
 </ul>
+
+{% endfor %}
 
 {% include 'snippets/pager.html' %}
 
