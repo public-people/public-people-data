@@ -13,31 +13,35 @@
 </form>
 
 <h2>Persons</h2>
-<ul>
-  {% for result_item in object_list %}
-  <li>
-    <a href="{{ result_item.url }}">{{ result_item.obj.name }}</a>
 
-    {% if result_item.obj.current_memberships %}
-    <p>Current memberships:</p>
-    <ul>
-      {% for membership in result_item.obj.current_memberships %}
-      <li>{{ membership.role }} of {{ membership.organization.name }}</li>
-      {% endfor %}
-    </ul>
+{% for result_item in object_list %}
+<a href="{{ result_item.url }}">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ result_item.obj.name }}</h3>
+    </div>
+    <div class="panel-body">
+      {% if result_item.obj.current_memberships %}
+      <p>Current memberships:</p>
+      <ul>
+        {% for membership in result_item.obj.current_memberships %}
+        <li>{{ membership.role }} of {{ membership.organization.name }}</li>
+        {% endfor %}
+      </ul>
 
-    {% elif result_item.obj.ended_memberships %}
-    <p>Last memberships:</p>
-    <ul>
-      {% for membership in result_item.obj.ended_memberships|slice:":3" %}
-      <li>{{ membership.role }} of {{ membership.organization.name }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+      {% elif result_item.obj.ended_memberships %}
+      <p>Last memberships:</p>
+      <ul>
+        {% for membership in result_item.obj.ended_memberships|slice:":3" %}
+        <li>{{ membership.role }} of {{ membership.organization.name }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div><!-- end .panel-body -->
+  </div><!-- end .panel -->
+</a>
+{% endfor %}
 
-  </li>
-  {% endfor %}
-</ul>
 
 {% if is_paginated %}
 <div class="pagination">

@@ -4,3 +4,7 @@ $icon-font-path: '../bower_components/bootstrap-sass/assets/fonts/bootstrap/';
 @import 'bootstrap-sass/assets/stylesheets/bootstrap/theme.scss';
 
 // put application-specific styles here
+
+a .panel {
+    color: #555;
+}
