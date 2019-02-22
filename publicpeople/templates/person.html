@@ -19,13 +19,14 @@ News matching "{{ name_query }}"
     {% if event.type == 'article' %}
     <a href="{{ event.article.source_url }}" class="list-group-item">
 
+      <div class="">
+        {{ event.article.title }}
+      </div>
+
       <div class="text-muted">
         Mentioned in {{ event.article.collection.label }}
       </div>
 
-      <div class="">
-        {{ event.article.title }}
-      </div>
     </a><!-- end .list-group-item -->
 
     {% else %}
