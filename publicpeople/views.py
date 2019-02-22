@@ -22,6 +22,7 @@ from rest_framework import viewsets, serializers
 import json
 import operator
 
+
 FEATURED_NAMES = [
     'Mduduzi Manana',
     'Jeff Radebe',
@@ -70,7 +71,9 @@ class PersonView(TemplateView):
 
         news_events = []
         first_last_name = get_first_last_name(person.name)
-        for article in NewsSearch(first_last_name):
+        news_offset = int(self.request.GET.get('offset', '0'))
+        results = NewsSearch.search(first_last_name, offset=news_offset)
+        for article in results['items']:
             news_events.append({
                 'type': 'article',
                 'article': article,
@@ -84,7 +87,20 @@ class PersonView(TemplateView):
         context['person'] = person
         context['events'] = events
         context['name_query'] = first_last_name
+        context['next_url'] = pagination_url(self.request, results['next_offset'])
+        context['prev_url'] = pagination_url(self.request, results['prev_offset'])
+        context['page_number'] = results['page_number']
+        context['total_pages'] = results['total_pages']
         return context
+
+
+def pagination_url(request, offset):
+    if offset is None:
+        return None
+    params = request.GET.copy()
+    params['offset'] = offset
+    querystring = params.urlencode()
+    return "{}?{}".format(request.path, querystring)
 
 
 def get_first_last_name(full_name):

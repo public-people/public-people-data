@@ -3,43 +3,44 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+PAGE_SIZE = 500
 
 class NewsSearch():
-    def __init__(self, query):
-        self.query = query
-        self.idx = None
-        self.items = None
-        self.next_url = None
-        self.session = requests.Session()
 
-    def __iter__(self):
-        return self
-
-    def next(self):
-        if self.items is None:
-            r = self.session.get('https://alephapi.public-people.techforgood.org.za/api/2/search',
+    @classmethod
+    def search(cls, query, offset):
+        session = requests.Session()
+        r = session.get('https://alephapi.public-people.techforgood.org.za/api/2/search',
                              params={
-                                 'q': '"%s"' % self.query,
+                                 'q': '"%s"' % query,
                                  'sort': 'published_at:desc',
-                                 'limit': 500,
+                                 'limit': PAGE_SIZE,
+                                 'offset': offset,
                              })
-            r.raise_for_status()
-            response = r.json()
-            self.next_url = response['next']
-            self.idx = 0
-            self.items = response['results']
+        r.raise_for_status()
+        response = r.json()
+        prev_offset = cls._prev_offset(offset)
+        next_offset = cls._next_offset(offset, response['total'])
+        return {
+            'items': response['results'],
+            'prev_offset': prev_offset,
+            'next_offset': next_offset,
+            'page_number': response['page'],
+            'total_pages': response['pages'],
+        }
 
-        if self.idx == len(self.items):
-            if self.next_url:
-                r = self.session.get(self.next_url)
-                r.raise_for_status()
-                response = r.json()
-                self.next_url = response['next']
-                self.idx = 0
-                self.items = response['results']
-            else:
-                raise StopIteration()
+    @staticmethod
+    def _next_offset(offset, total):
+        next_offset = offset + PAGE_SIZE
+        if next_offset >= total:
+            next_offset = None
+        return next_offset
 
-        item = self.items[self.idx]
-        self.idx += 1
-        return item
+    @staticmethod
+    def _prev_offset(offset):
+        prev_offset = offset - PAGE_SIZE
+        if prev_offset < 0:
+            prev_offset = 0
+        if prev_offset == offset:
+            prev_offset = None
+        return prev_offset
