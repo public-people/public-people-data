@@ -1,0 +1,25 @@
+<nav aria-label="...">
+  <ul class="pager">
+    {% if prev_url %}
+    <li class="previous">
+      <a href="{{ prev_url }}"><span aria-hidden="true">&larr;</span> Newer</a>
+    </li>
+    {% else %}
+    <li class="previous disabled">
+      <a><span aria-hidden="true">&larr;</span> Newer</a>
+    </li>
+    {% endif %}
+
+    Page {{ page_number }} of {{ total_pages }}
+
+    {% if next_url %}
+    <li class="next">
+      <a href="{{ next_url }}">Older<span aria-hidden="true">&rarr;</span></a>
+    </li>
+    {% else %}
+    <li class="next disabled">
+      <a>Older <span aria-hidden="true">&rarr;</span></a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
