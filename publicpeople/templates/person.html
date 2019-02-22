@@ -8,24 +8,37 @@ News matching "{{ name_query }}"
 
 {% include 'snippets/pager.html' %}
 
-{% for date_group in date_groups %}
-<div>{{ date_group.date }}</div>
 
-<ul>
+{% for date_group in date_groups %}
+
+<div><h4>{{ date_group.date }}</h4></div>
+
+  <div class="list-group">
   {% for event in date_group.events %}
-  <li>
+
     {% if event.type == 'article' %}
-    Mentioned in {{ event.article.collection.label }}
-    <a href="{{ event.article.source_url }}">{{ event.article.title }}</a>
+    <a href="{{ event.article.source_url }}" class="list-group-item">
+
+      <div class="text-muted">
+        Mentioned in {{ event.article.collection.label }}
+      </div>
+
+      <div class="">
+        {{ event.article.title }}
+      </div>
+    </a><!-- end .list-group-item -->
+
     {% else %}
-    {{ event.type }}
-    {{ event.membership.role }} of {{ event.membership.organization.name }}
+    <div class="list-group-item">
+      {{ event.type }} as
+      {{ event.membership.role }} of {{ event.membership.organization.name }}
+    </div>
     {% endif %}
-  </li>
   {% endfor %}
-</ul>
+  </div><!-- end .list-group -->
 
 {% endfor %}
+
 
 {% include 'snippets/pager.html' %}
 
