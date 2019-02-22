@@ -21,6 +21,7 @@ from popolo_sources.models import LinkToPopoloSource, PopoloSource
 from rest_framework import viewsets, serializers
 import json
 import operator
+from itertools import groupby
 
 
 FEATURED_NAMES = [
@@ -48,6 +49,33 @@ class PersonView(TemplateView):
     def get_context_data(self, **kwargs):
         person = get_object_or_404(Person, pk=kwargs['person_id'])
         memberships = person.memberships.order_by('end_date')
+        membership_events = self.make_membership_events(memberships)
+
+        first_last_name = get_first_last_name(person.name)
+        news_offset = int(self.request.GET.get('offset', '0'))
+        results = NewsSearch.search(first_last_name, offset=news_offset)
+        news_events = self.make_news_events(results['items'])
+
+        events = membership_events + news_events
+        events = sorted(events, key=lambda e: e['date'], reverse=True)
+        date_groups = []
+        for date, group in groupby(events, lambda e: e['date'][:10]):
+            date_groups.append({
+                'date': date,
+                'events': list(group),
+            })
+        context = super(TemplateView, self).get_context_data(**kwargs)
+        context['person'] = person
+        context['date_groups'] = date_groups
+        context['name_query'] = first_last_name
+        context['next_url'] = pagination_url(self.request, results['next_offset'])
+        context['prev_url'] = pagination_url(self.request, results['prev_offset'])
+        context['page_number'] = results['page_number']
+        context['total_pages'] = results['total_pages']
+        return context
+
+    @staticmethod
+    def make_membership_events(memberships):
         events = []
         for membership in memberships:
             if membership.start_date:
@@ -68,30 +96,19 @@ class PersonView(TemplateView):
                     'membership': membership,
                     'date': None,
                 })
+        return events
 
+    @staticmethod
+    def make_news_events(news_items):
         news_events = []
-        first_last_name = get_first_last_name(person.name)
-        news_offset = int(self.request.GET.get('offset', '0'))
-        results = NewsSearch.search(first_last_name, offset=news_offset)
-        for article in results['items']:
+        for article in news_items:
             news_events.append({
                 'type': 'article',
                 'article': article,
                 'date': article['published_at'],
             })
         news_events = unique(news_events)
-        events = events + news_events
-        events = sorted(events, key=lambda e: e['date'], reverse=True)
-
-        context = super(TemplateView, self).get_context_data(**kwargs)
-        context['person'] = person
-        context['events'] = events
-        context['name_query'] = first_last_name
-        context['next_url'] = pagination_url(self.request, results['next_offset'])
-        context['prev_url'] = pagination_url(self.request, results['prev_offset'])
-        context['page_number'] = results['page_number']
-        context['total_pages'] = results['total_pages']
-        return context
+        return news_events
 
 
 def pagination_url(request, offset):
