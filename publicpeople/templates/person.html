@@ -18,7 +18,7 @@ News matching "{{ name_query }}"
   {% for event in date_group.events %}
 
     {% if event.type == 'article' %}
-    <a href="{{ event.article.source_url }}" class="list-group-item">
+    <a href="{{ event.article.source_url }}" class="list-group-item" target="_blank" rel="noopener noreferrer">
 
       <div class="">
         {{ event.article.title }}
