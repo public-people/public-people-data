@@ -59,7 +59,7 @@ class PersonView(TemplateView):
         events = membership_events + news_events
         events = sorted(events, key=lambda e: e['date'], reverse=True)
         date_groups = []
-        for date, group in groupby(events, lambda e: e['date'][:10]):
+        for date, group in groupby(events, lambda e: e['date'] and e['date'][:10]):
             date_groups.append({
                 'date': date,
                 'events': list(group),
