@@ -12,3 +12,38 @@ a .panel {
 .text-muted {
     font-size: 12px;
 }
+
+.headshot {
+    height: 178px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.person-name {
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .person-identity {
+        padding-bottom: 10px;
+    }
+
+    .headshot {
+        display: inline;
+        margin-left: default;
+        margin-right: default;
+    }
+
+    .person-name {
+        display: inline;
+        text-align: left;
+        padding-left: 16px;
+    }
+}
+
+.credits {
+    padding-top: 50px;
+    font-size: 10px;
+}

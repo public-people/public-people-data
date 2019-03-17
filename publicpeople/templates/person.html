@@ -4,10 +4,21 @@
 {% block meta_title %}{{ person.name }} | Public People{% endblock %}
 {% block content %}
 
-<img class="headshot" src="{% if person.image %}{{ person.image }}{% endif %}" />
+<div class="person-identity">
+  <img class="headshot center-block"
+       {% if person.image %}
+       src="{{ person.image }}"
+       alt="Headshot of {{ person.name }}"
+       {% else %}
+       src="/static/images/user.png"
+       alt="No headshot of {{ person.name }} available yet"
+       {% endif %}
+       />
 
-<h2>{{ person.name }}</h2>
-News matching "{{ name_query }}"
+  <h2 class="person-name">{{ person.name }}</h2>
+</div>
+
+<div>News matching "{{ name_query }}"</div>
 
 {% include 'snippets/pager.html' %}
 
