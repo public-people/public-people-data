@@ -14,8 +14,8 @@ graphene_django==2.1.0
 greenlet==0.4.12
 gunicorn==19.5.0
 Markdown==2.6.11
--e git+https://github.com/public-people/multiple-django-popolo-sources.git@master#egg=multiple-django-popolo-sources
--e git+https://github.com/public-people/django-popolo.git@public-people#egg=django-popolo
+git+https://github.com/public-people/multiple-django-popolo-sources.git@master#egg=multiple-django-popolo-sources
+git+https://github.com/public-people/django-popolo.git@public-people#egg=mysociety-django-popolo
 newrelic==2.86.1.66
 pathlib==1.0.1
 psycopg2==2.7.5

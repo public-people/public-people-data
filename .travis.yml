@@ -1,0 +1,17 @@
+language: python
+
+services:
+  - docker
+
+install: []
+
+before_script:
+  - docker-compose up -d db
+  - docker-compose run --rm web python manage.py migrate
+  - docker-compose -f docker-compose.yml -f docker-compose.dev-data.yml up -d dev-data
+  - docker-compose run --rm web python manage.py popolo_sources_update --create http://dev-data:8001/pombola.json
+  - docker-compose up -d web
+  - timeout 30 bin/wait-for-http.sh http://localhost:8000
+
+script:
+  - curl http://localhost:8000/?q=julius | grep "Braamfontein"
