@@ -69,6 +69,9 @@ python manage.py runserver
 
 You can log in as your new superuser and explore the data using the admin interface at http://localhost:8000/admin and the public interface at http://localhost:8000/
 
+Search for one of the names in the example popolo data to see the site working.
+
+
 Development
 -----------
 

@@ -1,0 +1,2170 @@
+{
+  "areas": [],
+  "events": [
+    {
+      "classification": "legislative period",
+      "end_date": "2014-05-06",
+      "id": "na25",
+      "name": "25th Parliament (National Assembly)",
+      "organization_id": [
+        "core_organisation:70"
+      ],
+      "start_date": "2009-05-06"
+    },
+    {
+      "classification": "legislative period",
+      "end_date": "2019-05-21",
+      "id": "na26",
+      "name": "26th Parliament (National Assembly)",
+      "organization_id": [
+        "core_organisation:70"
+      ],
+      "start_date": "2014-05-21"
+    }
+  ],
+  "organizations": [
+    {
+      "category": "political",
+      "classification": "Party",
+      "contact_details": [],
+      "id": "core_organisation:77",
+      "identifiers": [
+        {
+          "identifier": "Q83162",
+          "scheme": "wikidata"
+        },
+        {
+          "identifier": "/party/anc",
+          "scheme": "org.mysociety.za"
+        }
+      ],
+      "name": "African National Congress (ANC)",
+      "pa_url": "http://www.pa.org.za/organisation/anc/",
+      "slug": "anc"
+    },
+    {
+      "category": "political",
+      "classification": "Executive",
+      "contact_details": [],
+      "id": "core_organisation:72",
+      "identifiers": [],
+      "name": "National Executive",
+      "pa_url": "http://www.pa.org.za/organisation/national-executive/",
+      "slug": "national-executive"
+    },
+    {
+      "category": "political",
+      "classification": "Parliament",
+      "contact_details": [],
+      "id": "core_organisation:70",
+      "identifiers": [],
+      "name": "National Assembly",
+      "pa_url": "http://www.pa.org.za/organisation/national-assembly/",
+      "slug": "national-assembly"
+    },
+    {
+      "category": "political",
+      "classification": "National Assembly Committees",
+      "contact_details": [
+        {
+          "type": "email",
+          "value": "akabingesi@parliament.gov.za"
+        }
+      ],
+      "id": "core_organisation:91",
+      "identifiers": [],
+      "name": "Portfolio Committee on Higher Education and Training",
+      "pa_url": "http://www.pa.org.za/organisation/portfolio-committee-on-higher-education-and-training/",
+      "slug": "portfolio-committee-on-higher-education-and-training"
+    },
+    {
+      "category": "political",
+      "classification": "Election List",
+      "contact_details": [],
+      "id": "core_organisation:835",
+      "identifiers": [],
+      "name": "African National Congress National Election List 2014",
+      "pa_url": "http://www.pa.org.za/organisation/anc-national-election-list-2014/",
+      "slug": "anc-national-election-list-2014"
+    },
+    {
+      "category": "political",
+      "classification": "National Assembly Committees",
+      "contact_details": [
+        {
+          "type": "email",
+          "value": "dmocumi@parliament.gov.za"
+        }
+      ],
+      "id": "core_organisation:101",
+      "identifiers": [],
+      "name": "Portfolio Committee on Public Enterprises",
+      "pa_url": "http://www.pa.org.za/organisation/portfolio-committee-on-public-enterprises/",
+      "slug": "portfolio-committee-on-public-enterprises"
+    },
+    {
+      "category": "other",
+      "classification": "Constituency Office",
+      "contact_details": [
+        {
+          "type": "address",
+          "value": "78 De Korte & De Beer Streets, Mineralia Bld, Braamfontein, 2000, South Africa"
+        },
+        {
+          "type": "voice",
+          "value": "011 403 2307"
+        }
+      ],
+      "founding_date": "2014-05-21",
+      "id": "core_organisation:1390",
+      "identifiers": [],
+      "lat": -26.1934470632421,
+      "lng": 28.036385178566,
+      "name": "EFF Constituency Office: Braamfontein",
+      "pa_url": "http://www.pa.org.za/organisation/eff-constituency-office-braamfontein/",
+      "slug": "eff-constituency-office-braamfontein"
+    },
+    {
+      "category": "political",
+      "classification": "National Assembly Committees",
+      "contact_details": [
+        {
+          "type": "email",
+          "value": "aboss@parliament.gov.za"
+        }
+      ],
+      "id": "core_organisation:196",
+      "identifiers": [
+        {
+          "identifier": "/committee_pmg/18",
+          "scheme": "org.mysociety.za"
+        }
+      ],
+      "name": "Portfolio Committee on Mineral Resources",
+      "pa_url": "http://www.pa.org.za/organisation/mining/",
+      "slug": "mining"
+    },
+    {
+      "category": "political",
+      "classification": "Election List",
+      "contact_details": [],
+      "id": "core_organisation:955",
+      "identifiers": [],
+      "name": "Economic Freedom Fighters National Election List 2014",
+      "pa_url": "http://www.pa.org.za/organisation/eff-national-election-list-2014/",
+      "slug": "eff-national-election-list-2014"
+    },
+    {
+      "category": "political",
+      "classification": "Party",
+      "contact_details": [],
+      "id": "core_organisation:810",
+      "identifiers": [
+        {
+          "identifier": "Q15613585",
+          "scheme": "wikidata"
+        }
+      ],
+      "name": "Economic Freedom Fighters (EFF)",
+      "pa_url": "http://www.pa.org.za/organisation/eff/",
+      "slug": "eff"
+    },
+    {
+      "category": "political",
+      "classification": "Committee",
+      "contact_details": [],
+      "id": "core_organisation:127",
+      "identifiers": [],
+      "name": "Portfolio Committee On International Relations and Co-operation",
+      "pa_url": "http://www.pa.org.za/organisation/portfolio-committee-on-international-relations-and-co-operation/",
+      "slug": "portfolio-committee-on-international-relations-and-co-operation"
+    },
+    {
+      "category": "political",
+      "classification": "National Assembly Committees",
+      "contact_details": [
+        {
+          "type": "email",
+          "value": "vramaano@parliament.gov.za"
+        }
+      ],
+      "id": "core_organisation:1180",
+      "identifiers": [],
+      "name": "Portfolio Committee on Justice and Correctional Services",
+      "pa_url": "http://www.pa.org.za/organisation/portfolio-committee-justice-and-correctional-services/",
+      "slug": "portfolio-committee-justice-and-correctional-services"
+    },
+    {
+      "category": "political",
+      "classification": "Ad Hoc Committees",
+      "contact_details": [],
+      "id": "core_organisation:1406",
+      "identifiers": [],
+      "name": "Ad Hoc Committee to nominate a person for appointment of Public Protector",
+      "pa_url": "http://www.pa.org.za/organisation/ad-hoc-committee-nominate-person-appointment-public-protector/",
+      "slug": "ad-hoc-committee-nominate-person-appointment-public-protector"
+    },
+    {
+      "category": "political",
+      "classification": "Constituency Office",
+      "contact_details": [
+        {
+          "type": "address",
+          "value": "Office No.113, Shoprite Centre, Nongoma, 3950, South Africa"
+        },
+        {
+          "type": "email",
+          "value": "agrippamaphisa@yahoo.co.za"
+        },
+        {
+          "type": "fax",
+          "value": "035 8313 168"
+        },
+        {
+          "type": "voice",
+          "value": "035 8310 282"
+        }
+      ],
+      "dissolution_date": "2014-05-06",
+      "id": "core_organisation:490",
+      "identifiers": [
+        {
+          "identifier": "861",
+          "scheme": "constituency-office/ANC/"
+        }
+      ],
+      "lat": -27.8986111,
+      "lng": 31.6480556,
+      "name": "ANC Constituency Office (861): Nongoma",
+      "pa_url": "http://www.pa.org.za/organisation/anc-constituency-office-861-nongoma/",
+      "slug": "anc-constituency-office-861-nongoma"
+    }
+  ],
+  "persons": [
+    {
+      "biography": "Mr Gordhan entered South African politics during the height of the struggle against Apartheid. He led and organised the Student Movement and Civic Structures from the 1970’s to 1980’s. Before becoming the Minister of Finance, Mr Gordhan was involved in the CODESA multi-party dialogue, participated in drafting the White Paper for Local Government and was appointed as the Chairperson of the Parliamentary Constitutional Committee in Parliament where he had the responsibility of overseeing the implementation of the 1996 Constitution. Additionally, he served as the Deputy Commissioner of the South African Revenue Service (SARS) from 1998 to 1999 and was appointed as the Commissioner of SARS in 1999. He completed a DTech degree in Business Administration at the Free State Central University of Technology in 2009 and received an Honorary Doctorate of Commerce from UNISA and an Honorary Doctorate of Law from UCT in 2007 respectively. Source: (gov.za)",
+      "contact_details": [
+        {
+          "type": "email",
+          "value": "Mziwonke.Jacobs@dpe.gov.za"
+        },
+        {
+          "type": "voice",
+          "value": "021 469 6762"
+        },
+        {
+          "type": "voice",
+          "value": "012 431 1000"
+        }
+      ],
+      "family_name": "Gordhan",
+      "gender": "male",
+      "given_name": "Pravin",
+      "honorific_prefix": "Mr",
+      "id": "core_person:539",
+      "identifiers": [
+        {
+          "identifier": "67915719-6091-4ccf-a44b-9de7fe265613",
+          "scheme": "everypolitician"
+        },
+        {
+          "identifier": "Q561279",
+          "scheme": "wikidata"
+        },
+        {
+          "identifier": "/person/528",
+          "scheme": "org.mysociety.za"
+        },
+        {
+          "identifier": "446",
+          "scheme": "za.org.pmg.api/member"
+        },
+        {
+          "identifier": "pravin-gordhan",
+          "scheme": "pombola-slug"
+        }
+      ],
+      "images": [
+        {
+          "url": "http://www.pa.org.za/media_root/images/4130.jpg"
+        }
+      ],
+      "interests_register": {
+        "Parliament Register of Members' Interests 2010": {
+          "GIFTS AND HOSPITALITY": [
+            {
+              "Description": "African Romance Pen",
+              "Source": "Mr Vali Moosa",
+              "Value": "Approx R380"
+            },
+            {
+              "Description": "X2 2005 Meerlust Wine",
+              "Source": "Stavos Nicolaou",
+              "Value": "Unknown"
+            },
+            {
+              "Description": "Painting",
+              "Source": "Old Mutual",
+              "Value": "Unknown"
+            },
+            {
+              "Description": "Book: Capitalisms Achilles Heel",
+              "Source": "Author: Raymond Baker",
+              "Value": "Approx R180"
+            },
+            {
+              "Description": "Glass paper weight [with Switzerland flag]",
+              "Source": "Jean-Daniel Gerber, State Secretary",
+              "Value": "Unknown"
+            },
+            {
+              "Description": "Old Monk Rum [7 yr old]",
+              "Source": "LC Singh",
+              "Value": "Unknown"
+            },
+            {
+              "Description": "Royal Canadian Mint: 2010 Proof Set of Canadian Colnage",
+              "Source": "Minister James M Flaherty",
+              "Value": "Approx R300"
+            },
+            {
+              "Description": "Dedan Killan: Silver cufflinks",
+              "Source": "Minister James M Flaherty",
+              "Value": "Approx R400"
+            },
+            {
+              "Description": "Yellow blanket, RSA scarf, RSA beanie, Car RSA flag and mirror socks",
+              "Source": "Approx R400",
+              "Value": "Dept. Arts"
+            },
+            {
+              "Description": "Bamba Jacks game",
+              "Source": "ABSA",
+              "Value": "Approx R500"
+            },
+            {
+              "Description": "Fruit &amp; flower basket",
+              "Source": "Ms Maria Ramos",
+              "Value": "Approx R400"
+            },
+            {
+              "Description": "Picnic bag with utensils",
+              "Source": "Eskom Executives",
+              "Value": "Approx R400"
+            },
+            {
+              "Description": "Cattleya Classic Pen",
+              "Source": "Sadaco Ogata, President Japan",
+              "Value": "Approx R300"
+            },
+            {
+              "Description": "Carol Boyes - Bowl",
+              "Source": "Brait",
+              "Value": "Approx R600"
+            },
+            {
+              "Description": "Fruit &amp; Nut basket",
+              "Source": "Land Bank : CEO",
+              "Value": "Approx R300"
+            },
+            {
+              "Description": "2010 FIFA World Cup memorabilia: badges, scarf, beanie, vuvuzela, shaped pen",
+              "Source": "Brand SA /2010 LOC [OC]",
+              "Value": "Approx R600"
+            }
+          ],
+          "LAND AND PROPERTY": [
+            {
+              "Description": "House",
+              "Extent": "Normal",
+              "Location": "Pretoria"
+            },
+            {
+              "Description": "Holiday flat",
+              "Location": "Durban"
+            }
+          ],
+          "PENSIONS": [
+            {
+              "Public/Private": "Public",
+              "Source": "GEPF"
+            }
+          ],
+          "SHARES AND OTHER FINANCIAL INTERESTS": [
+            {
+              "Name of Company": "Old Mutual/Sanlam",
+              "Nature": "Shares from demutualisation",
+              "Nominal Value": "Unknown"
+            },
+            {
+              "Name of Company": "Chosen by Broker: Pick n Pay, Remgro, SA Miller"
+            },
+            {
+              "Name of Company": "Sasol Inzalo Share",
+              "No": "84",
+              "Nominal Value": "210"
+            }
+          ]
+        },
+        "Parliament Register of Members' Interests 2011": {
+          "GIFTS AND HOSPITALITY": [
+            {
+              "Description": "Old Monk Rum [7yr old]",
+              "Source": "LC Singh",
+              "Value": "Approx R400"
+            },
+            {
+              "Description": "Carrol Boyes Medium bowl",
+              "Source": "Brait",
+              "Value": "Approx R600"
+            },
+            {
+              "Description": "Canadian Coinage",
+              "Source": "Minister James M Flahery",
+              "Value": "Approx R300"
+            },
+            {
+              "Description": "Dedan Killan - Silver Cufflinks",
+              "Source": "Finance Canada",
+              "Value": "Approx R400"
+            },
+            {
+              "Description": "Bamba Jacks game",
+              "Source": "ABSA",
+              "Value": "Approx R500"
+            },
+            {
+              "Description": "Silver Tie Pin [Lapponia Jewelry]",
+              "Source": "NAAMSA Delegation",
+              "Value": "Unknown"
+            },
+            {
+              "Description": "Indian Natural Tea x 3 in wooden box",
+              "Source": "Commerce",
+              "Value": "Approx R200"
+            },
+            {
+              "Description": "Korean face mask box",
+              "Source": "G20",
+              "Value": "Approx R800"
+            },
+            {
+              "Description": "Box with candles, teas, book",
+              "Source": "Breakfast [in London]",
+              "Value": "Approx R500"
+            },
+            {
+              "Description": "Traditional Italian Fruit Cake",
+              "Source": "Italian Embassy",
+              "Value": "Approx 200"
+            },
+            {
+              "Description": "South African DVD's",
+              "Source": "Vision Entertainment",
+              "Value": "Approx R500"
+            },
+            {
+              "Description": "Photo of Soccer City",
+              "Source": "Aveng Group",
+              "Value": "Unknown"
+            },
+            {
+              "Description": "Carrol Boyes - Small nut bowl",
+              "Source": "ABSIPsc: Wits",
+              "Value": "Approx R500"
+            },
+            {
+              "Description": "South African DVD's",
+              "Source": "Vision Entertainment",
+              "Value": "Approx R500"
+            },
+            {
+              "Description": "Hunger for Freedom: Book and spices",
+              "Source": "on State visit to UK",
+              "Value": "Approx R600"
+            },
+            {
+              "Description": "Fruit + Nut basket",
+              "Source": "Land Bank : CEO",
+              "Value": "Approx R300"
+            },
+            {
+              "Description": "shaped pen",
+              "Source": "Brand SA/2010 LOC [OC]",
+              "Value": "Approx R600"
+            },
+            {
+              "Description": "Car RSA flag",
+              "Source": "Dept of Arts",
+              "Value": "Approx R400"
+            },
+            {
+              "Description": "Fruit + Nut basket",
+              "Source": "Ms Maria Ramos : ABSA",
+              "Value": "Approx R500"
+            },
+            {
+              "Description": "Hunger for Freedom: Book and spices",
+              "Source": "Received on State Visit to UK",
+              "Value": "R600"
+            }
+          ],
+          "LAND AND PROPERTY": [
+            {
+              "Description": "House",
+              "Extent": "1 200sq.m.",
+              "Location": "Pretoria"
+            },
+            {
+              "Description": "Flat",
+              "Extent": "+- 110sq.m.",
+              "Location": "Durban"
+            }
+          ],
+          "PENSIONS": [
+            {
+              "Public/Private": "Public",
+              "Source": "GEPF"
+            }
+          ],
+          "SHARES AND OTHER FINANCIAL INTERESTS": [
+            {
+              "Name of Company": "BHP Billiton PLC",
+              "Nature": "General Mining",
+              "No": "200",
+              "Nominal Value": "R56 480"
+            },
+            {
+              "Name of Company": "Eqstra Holdings Ltd",
+              "Nature": "Diversified Industry",
+              "No": "100",
+              "Nominal Value": "R670"
+            },
+            {
+              "Name of Company": "Remgro Ltd",
+              "Nature": "Diversified Industry",
+              "No": "75",
+              "Nominal Value": "R8 336.25"
+            },
+            {
+              "Name of Company": "Imperial Holdings Ltd",
+              "Nature": "Transport Services",
+              "No": "100",
+              "Nominal Value": "R11 614"
+            },
+            {
+              "Name of Company": "SABMILLER PLC",
+              "Nature": "Breweries",
+              "No": "100",
+              "Nominal Value": "R24 950"
+            },
+            {
+              "Name of Company": "British AM Tobacco",
+              "Nature": "Tobacco",
+              "No": "30",
+              "Nominal Value": "R8 506.50"
+            },
+            {
+              "Name of Company": "Reinet Investments",
+              "Nature": "Equity Investment",
+              "No": "48",
+              "Nominal Value": "R557.58"
+            },
+            {
+              "Name of Company": "Pikwik",
+              "Nature": "Food Retail",
+              "No": "500",
+              "Nominal Value": "R9 375"
+            }
+          ]
+        },
+        "Parliament Register of Members' Interests 2012": {
+          "GIFTS AND HOSPITALITY": [
+            {
+              "Description": "Stress ball",
+              "Source": "Sizwe Ntsaluba Gobodo",
+              "Value": "R350"
+            },
+            {
+              "Description": "Loreal facial hamper",
+              "Source": "Loreal",
+              "Value": "R800"
+            },
+            {
+              "Description": "Biscuits, nuts basket",
+              "Source": "Ms Maria Ramos",
+              "Value": "E500"
+            },
+            {
+              "Description": "Long champ Brown leather [mini luggage bag]",
+              "Source": "French Government",
+              "Value": "R1 000"
+            },
+            {
+              "Description": "Dior mens perfume; Dion mens shaving relief",
+              "Source": "French Government",
+              "Value": "R1 150"
+            },
+            {
+              "Description": "Books: Have and Have Nots; III fares the land",
+              "Source": "World Bank - Sarwat Hussain",
+              "Value": "R600"
+            },
+            {
+              "Description": "Aluminium decor accessory",
+              "Source": "University of Stellenbosch",
+              "Value": "R800"
+            },
+            {
+              "Description": "Conference bag, Golf shirt and cap",
+              "Source": "COP 17 Conference",
+              "Value": "R500"
+            },
+            {
+              "Description": "Wine - Meerlust",
+              "Source": "Aspen: Stravos Nicolaou",
+              "Value": "R318"
+            },
+            {
+              "Description": "Book: Great Choice by Jim Collins",
+              "Source": "ABSIP",
+              "Value": "R200"
+            },
+            {
+              "Description": "Health basket",
+              "Source": "Ms Maria Ramos",
+              "Value": "R500"
+            },
+            {
+              "Description": "Conference Bag, pen",
+              "Source": "Mexican Government",
+              "Value": "R300"
+            },
+            {
+              "Description": "Incense burner",
+              "Source": "Chairman of Tender Board of Oman, Min of Finance Conterpart",
+              "Value": "R500"
+            },
+            {
+              "Description": "Nelson Mandela Medallion: Long walk to freedom",
+              "Source": "First Rand Bank",
+              "Value": "Value Unknown"
+            },
+            {
+              "Description": "New York Stock Exchange Euronext: Medallion",
+              "Source": "Courtesy Gift: Bilateral Meeting and walk about in the NYSE",
+              "Value": "Unknown"
+            }
+          ],
+          "LAND AND PROPERTY": [
+            {
+              "Description": "House",
+              "Extent": "1 200sq.m.",
+              "Location": "Pretoria"
+            },
+            {
+              "Description": "Flat",
+              "Extent": "110sq.m.",
+              "Location": "Durban"
+            }
+          ],
+          "PENSIONS": [
+            {
+              "Public/Private": "Private",
+              "Source": "Sanlam"
+            },
+            {
+              "Public/Private": "Private",
+              "Source": "Investment Solutions Retirement Annuity - Voluntary Savings"
+            }
+          ],
+          "SHARES AND OTHER FINANCIAL INTERESTS": [
+            {
+              "Name of Company": "BHP Billiton PLC",
+              "Nature": "General mining",
+              "No": "200",
+              "Nominal Value": "R44 570"
+            },
+            {
+              "Name of Company": "Eqstra Holdings Ltd",
+              "Nature": "Diversified industries",
+              "No": "100",
+              "Nominal Value": "R715"
+            },
+            {
+              "Name of Company": "Remgro Ltd",
+              "Nature": "Diversified industries",
+              "No": "75",
+              "Nominal Value": "R9 825"
+            },
+            {
+              "Name of Company": "Imperial Holdings Ltd",
+              "Nature": "Transport services",
+              "No": "100",
+              "Nominal Value": "R16 031"
+            },
+            {
+              "Name of Company": "SABMiller PLC",
+              "Nature": "Brewers",
+              "No": "100",
+              "Nominal Value": "R31 273"
+            },
+            {
+              "Name of Company": "British AM Tobacco PLC",
+              "Nature": "Tobacco",
+              "No": "30",
+              "Nominal Value": "R11 970"
+            },
+            {
+              "Name of Company": "Pick n Pay Holdings Ltd",
+              "Nature": "Food Retail",
+              "No": "500",
+              "Nominal Value": "R9 730"
+            },
+            {
+              "Name of Company": "Reinet Investments SCA",
+              "Nature": "Equity Investments",
+              "No": "48",
+              "Nominal Value": "R664.80"
+            },
+            {
+              "Name of Company": "Sasol",
+              "Nature": "BEE",
+              "No": "84"
+            }
+          ]
+        },
+        "Parliament Register of Members' Interests 2013": {
+          "GIFTS AND HOSPITALITY": [
+            {
+              "Description": "Wine bott with accessories",
+              "Source": "SAIPA: Shahied Daniels",
+              "Value": "R600"
+            },
+            {
+              "Description": "Traditional Japanese photo frame",
+              "Source": "Japanese Government"
+            },
+            {
+              "Description": "Art work [Black &amp; white]",
+              "Source": "Adriaan Gore and Discovery Board"
+            },
+            {
+              "Description": "White stone dish platter"
+            },
+            {
+              "Description": "Fruit basket",
+              "Source": "Maria Ramos",
+              "Value": "R400"
+            },
+            {
+              "Description": "Carrol Boyes desk business card holder",
+              "Source": "IIF Inaugural Africa Financial Summit",
+              "Value": "R964"
+            },
+            {
+              "Description": "Book The $10 trillion prize, captivating the Newly Affluent in China",
+              "Source": "Mr Deepak Premnarayen",
+              "Value": "R200"
+            },
+            {
+              "Description": "Display frame: cultural artwork",
+              "Source": "Ministery of Finance: India"
+            },
+            {
+              "Description": "Snack basket",
+              "Source": "Ms Maria Ramos",
+              "Value": "R400"
+            },
+            {
+              "Description": "Duffel bag with golf shirt",
+              "Source": "Presidential Golf Challenge",
+              "Value": "R800"
+            },
+            {
+              "Description": "Moet Champagne with 4 crystal glasses",
+              "Source": "Mr Vivian Reddy"
+            },
+            {
+              "Description": "Book: The Fox Triology",
+              "Source": "Anne Pratt, Totsie Mamela",
+              "Value": "R200"
+            },
+            {
+              "Description": "Book: Muslim traders in Natal the first 100 years biographical sketchbook, Suleman Dangor",
+              "Source": "Minara Buisness Chamber",
+              "Value": "R200"
+            },
+            {
+              "Description": "Cabin 4 wheeled bag with small umbrella",
+              "Source": "DIRCO: BRICS Summit",
+              "Value": "R400"
+            },
+            {
+              "Description": "Book with canister with fruit, nuts, chocolates",
+              "Source": "Pmt. Angooni Gupta"
+            }
+          ],
+          "LAND AND PROPERTY": [
+            {
+              "Description": "House",
+              "Extent": "1 200sq.m.",
+              "Location": "Pretoria"
+            },
+            {
+              "Description": "Flat",
+              "Extent": "110sq.m.",
+              "Location": "Durban"
+            }
+          ],
+          "PENSIONS": [
+            {
+              "Public/Private": "Public",
+              "Source": "GEPF"
+            },
+            {
+              "Public/Private": "Private",
+              "Source": "Investment Solutions Living Annuity"
+            },
+            {
+              "Public/Private": "Private",
+              "Source": "Sanlam"
+            },
+            {
+              "Public/Private": "Private",
+              "Source": "Investment Solutions Retirement Annuity Voluntary"
+            }
+          ],
+          "SHARES AND OTHER FINANCIAL INTERESTS": [
+            {
+              "Name of Company": "BHP Billiton PLC",
+              "Nature": "General Mining",
+              "No": "200",
+              "Nominal Value": "R56 380"
+            },
+            {
+              "Name of Company": "Impala Platinum Holdings",
+              "Nature": "Plat and Prescious Metals",
+              "No": "4",
+              "Nominal Value": "R396.60"
+            },
+            {
+              "Name of Company": "Eqstra Holdings Ltd",
+              "Nature": "Diversifief Industries",
+              "No": "100",
+              "Nominal Value": "R616"
+            },
+            {
+              "Name of Company": "Remgro Ltd",
+              "Nature": "Diversified Industries",
+              "No": "75",
+              "Nominal Value": "R14 775"
+            },
+            {
+              "Name of Company": "Imperial Holdings Ltd",
+              "Nature": "Transport Services",
+              "No": "100",
+              "Nominal Value": "R21 819"
+            },
+            {
+              "Name of Company": "SABMiller PLC",
+              "Nature": "Brewers",
+              "No": "100",
+              "Nominal Value": "R50 839"
+            },
+            {
+              "Name of Company": "British American Tobaco PLC",
+              "Nature": "Tobacco",
+              "No": "30",
+              "Nominal Value": "R16 335"
+            },
+            {
+              "Name of Company": "Pick N Pay Holdings Ltd",
+              "Nature": "Food Retail",
+              "No": "500",
+              "Nominal Value": "R8 650"
+            },
+            {
+              "Name of Company": "Reinet Investments SCA",
+              "Nature": "Equity Investments",
+              "No": "48",
+              "Nominal Value": "R976.80"
+            },
+            {
+              "Name of Company": "Sasol",
+              "Nature": "Integrated Oil",
+              "No": "250",
+              "Nominal Value": "R109 375"
+            },
+            {
+              "Name of Company": "Anglo American PLC",
+              "Nature": "General mining",
+              "No": "250",
+              "Nominal Value": "R57 550"
+            },
+            {
+              "Name of Company": "BHP Billiton PLC",
+              "Nature": "General Mining",
+              "No": "350",
+              "Nominal Value": "R98 665"
+            },
+            {
+              "Name of Company": "Bidvest",
+              "Nature": "Business Support Services",
+              "No": "400",
+              "Nominal Value": "R104 000"
+            },
+            {
+              "Name of Company": "Remgro",
+              "Nature": "Diversified Industrials",
+              "No": "500",
+              "Nominal Value": "R98 500"
+            },
+            {
+              "Name of Company": "SABMiller PLC",
+              "Nature": "Brewers",
+              "No": "300",
+              "Nominal Value": "R152 517"
+            },
+            {
+              "Name of Company": "Naspers",
+              "Nature": "Broadcasting",
+              "No": "170",
+              "Nominal Value": "R124 100"
+            },
+            {
+              "Name of Company": "Spar",
+              "Nature": "Food",
+              "No": "800",
+              "Nominal Value": "R93 512"
+            },
+            {
+              "Name of Company": "MTN",
+              "Nature": "Mobile Telecommunications",
+              "No": "800",
+              "Nominal Value": "R145 592"
+            },
+            {
+              "Name of Company": "RMB Holdings",
+              "Nature": "Banks",
+              "No": "2 000",
+              "Nominal Value": "R78 640"
+            },
+            {
+              "Name of Company": "Standard Bank",
+              "Nature": "Banks",
+              "No": "900",
+              "Nominal Value": "R100 161"
+            },
+            {
+              "Name of Company": "RMI Holdlings Ltd",
+              "Nature": "Equity Investment Instruments",
+              "No": "3 900",
+              "Nominal Value": "R99 255"
+            },
+            {
+              "Name of Company": "Acucap Properties Ltd",
+              "Nature": "Real Estate holdings and development",
+              "No": "3 000",
+              "Nominal Value": "R155 550"
+            },
+            {
+              "Name of Company": "Growthpoint",
+              "Nature": "Real Estate Holdings",
+              "No": "6 000",
+              "Nominal Value": "R164 `00"
+            },
+            {
+              "Name of Company": "Hyprop",
+              "Nature": "Real Estate Holdings",
+              "No": "2 000",
+              "Nominal Value": "R155 000"
+            },
+            {
+              "Name of Company": "Capital Prop",
+              "Nature": "Real Estate Investment Trusts",
+              "No": "14 000",
+              "Nominal Value": "R158 900"
+            },
+            {
+              "Name of Company": "ABSA Bank Ltd",
+              "Nature": "Listed Preference Share",
+              "No": "230",
+              "Nominal Value": "R199 985"
+            },
+            {
+              "Name of Company": "Firstrand B-Prefs",
+              "Nature": "Listed Preference Share",
+              "No": "2 200",
+              "Nominal Value": "R204 600"
+            },
+            {
+              "Name of Company": "Nedbank Prefs",
+              "Nature": "Listed Preference Share",
+              "No": "19 000",
+              "Nominal Value": "R195 700"
+            },
+            {
+              "Name of Company": "Standard Bank",
+              "Nature": "Listed Preference Share",
+              "No": "2 200",
+              "Nominal Value": "R209 440"
+            },
+            {
+              "Name of Company": "Nedbank",
+              "Nature": "Money Market",
+              "Nominal Value": "R461 583"
+            },
+            {
+              "Name of Company": "The Foschini Group Ltd",
+              "Nature": "Apparel Retailers",
+              "No": "800",
+              "Nominal Value": "R86 280"
+            }
+          ]
+        },
+        "Parliament Register of Members' Interests 2014": {
+          "GIFTS AND HOSPITALITY": [
+            {
+              "Description": "Fruit basket",
+              "Source": "3C Ministries",
+              "Value": "Approx R400"
+            }
+          ],
+          "LAND AND PROPERTY": [
+            {
+              "Description": "House",
+              "Extent": "1 200sq.m.",
+              "Location": "Pretoria"
+            },
+            {
+              "Description": "Flat",
+              "Extent": "1.10sq.m.",
+              "Location": "Durban"
+            }
+          ],
+          "PENSIONS": [
+            {
+              "Public/Private": "Public",
+              "Source": "GEPF"
+            },
+            {
+              "Public/Private": "Private",
+              "Source": "Sanlam - Investment Solutions Living Annuity"
+            },
+            {
+              "Public/Private": "Private",
+              "Source": "Sanlam"
+            }
+          ],
+          "SHARES AND OTHER FINANCIAL INTERESTS": [
+            {
+              "Name of Company": "Reinet Investments SCA",
+              "Nature": "Equity Investments",
+              "No": "48",
+              "Nominal Value": "R1 139.04"
+            },
+            {
+              "Name of Company": "Anglo American PLC",
+              "Nature": "General mining",
+              "No": "250",
+              "Nominal Value": "R66 847.50"
+            },
+            {
+              "Name of Company": "BHP Billiton PLC",
+              "Nature": "General mining",
+              "No": "350",
+              "Nominal Value": "R118 650"
+            },
+            {
+              "Name of Company": "Bidvest",
+              "Nature": "Business support services",
+              "No": "400",
+              "Nominal Value": "R113 520"
+            },
+            {
+              "Name of Company": "Remgro",
+              "Nature": "Diversified industrials",
+              "No": "500",
+              "Nominal Value": "R100 435"
+            },
+            {
+              "Name of Company": "ASPEN",
+              "Nature": "Pharmaceuticals",
+              "No": "450",
+              "Nominal Value": "R123 300"
+            },
+            {
+              "Name of Company": "SABMiller PLC",
+              "Nature": "Brewers",
+              "No": "300",
+              "Nominal Value": "R161 622"
+            },
+            {
+              "Name of Company": "Spar",
+              "Nature": "Apparel retailers",
+              "No": "800",
+              "Nominal Value": "R98 000"
+            },
+            {
+              "Name of Company": "Naspers",
+              "Nature": "Broadcasting",
+              "No": "170",
+              "Nominal Value": "R195 899.50"
+            },
+            {
+              "Name of Company": "RMB Holdings",
+              "Nature": "Banks",
+              "No": "2 000",
+              "Nominal Value": "R97 620"
+            },
+            {
+              "Name of Company": "Standard Bank",
+              "Nature": "Banks",
+              "No": "900",
+              "Nominal Value": "R125 460"
+            },
+            {
+              "Name of Company": "RMI Holdings Ltd",
+              "Nature": "Equity Investment instruments",
+              "No": "3 900",
+              "Nominal Value": "R112 086"
+            },
+            {
+              "Name of Company": "Acucap Properties Ltd",
+              "Nature": "Real estate hld.",
+              "No": "3 000",
+              "Nominal Value": "R121 050"
+            },
+            {
+              "Name of Company": "Growthpoint",
+              "Nature": "Real estate hld",
+              "No": "600",
+              "Nominal Value": "R144 300"
+            },
+            {
+              "Name of Company": "Hyprop",
+              "Nature": "Real estate hld.",
+              "No": "2 000",
+              "Nominal Value": "R152 800"
+            },
+            {
+              "Name of Company": "Capital prop",
+              "Nature": "Real Estate Inv. Trust",
+              "No": "14 000",
+              "Nominal Value": "R146 440"
+            },
+            {
+              "Name of Company": "ABSA Bank Ltd",
+              "Nature": "Listed pref. share",
+              "No": "230",
+              "Nominal Value": "R190 900"
+            },
+            {
+              "Name of Company": "Firstrand B-Prefs",
+              "Nature": "Listed pref. share",
+              "No": "2 200",
+              "Nominal Value": "R198 792"
+            },
+            {
+              "Name of Company": "Nedbank Prefs",
+              "Nature": "Listed pref. share",
+              "No": "19 000",
+              "Nominal Value": "R187 150"
+            },
+            {
+              "Name of Company": "Standard Bank",
+              "Nature": "Listed pref. share",
+              "No": "2 200",
+              "Nominal Value": "R203 500"
+            },
+            {
+              "Name of Company": "Sasol",
+              "Nature": "Integrated oil &amp; gas",
+              "No": "250",
+              "Nominal Value": "R145 300"
+            },
+            {
+              "Name of Company": "Eqstra Holdings Ltd",
+              "Nature": "Diversified industries",
+              "No": "100",
+              "Nominal Value": "R718.00"
+            },
+            {
+              "Name of Company": "BHP Billiton PLC",
+              "Nature": "General mining",
+              "No": "200",
+              "Nominal Value": "R67 800"
+            },
+            {
+              "Name of Company": "Impala Platinum Holdings",
+              "Nature": "Plat",
+              "No": "4",
+              "Nominal Value": "R486.16"
+            },
+            {
+              "Name of Company": "Remgro Ltd",
+              "Nature": "Diversified industries",
+              "No": "75",
+              "Nominal Value": "R15 065.25"
+            },
+            {
+              "Name of Company": "Imperial Holdings Ltd",
+              "Nature": "Transport services",
+              "No": "100",
+              "Nominal Value": "R18 300"
+            },
+            {
+              "Name of Company": "SABMiller PLC",
+              "Nature": "Brewers",
+              "No": "100",
+              "Nominal Value": "R53 874"
+            },
+            {
+              "Name of Company": "British American Tobacco PLC",
+              "Nature": "Tobacco",
+              "No": "30",
+              "Nominal Value": "R17 562.60"
+            },
+            {
+              "Name of Company": "Pick N Pay Holdings Ltd",
+              "Nature": "Food retail",
+              "No": "500",
+              "Nominal Value": "R11 095"
+            }
+          ]
+        },
+        "Parliament Register of Members' Interests 2015": {
+          "GIFTS AND HOSPITALITY": [
+            {
+              "Description": "Chocolate and nuts platter",
+              "Source": "Seasons's Greetings",
+              "Value": "R200"
+            },
+            {
+              "Description": "Johnnie Walker Black 1litre x 2",
+              "Source": "Embassy of Palestine [Seasons' greetings]",
+              "Value": "R700"
+            },
+            {
+              "Description": "Book: Liberation diaries reflections on 20 yr of Democracy: Busani Ngcaweni",
+              "Source": "Anglo American [Season's greetings]",
+              "Value": "R250"
+            },
+            {
+              "Description": "The rainbow makers tribute series DVDs &#894; chocolates",
+              "Source": "Embassy of Turkey [Season's greetings]",
+              "Value": "R600"
+            },
+            {
+              "Description": "Book: \"Aziz Pahad\"",
+              "Source": "Mr Stravos Nicolou [Season's greeings]",
+              "Value": "R200"
+            },
+            {
+              "Description": "Afriology gift pack",
+              "Source": "Keynote Address: Courtesy gift",
+              "Value": "R500"
+            },
+            {
+              "Description": "Vietnam Cultured base trophy",
+              "Source": "Delegation from Vietnam - Courtesy gift",
+              "Value": "R500"
+            },
+            {
+              "Description": "Framed in glass Ndebele Doll",
+              "Source": "City of Tshwane - Courtesy gift]",
+              "Value": "R300"
+            },
+            {
+              "Description": "Japan cultured vase",
+              "Source": "Bilateral meeitng in Japan - Courtesy gift",
+              "Value": "R300"
+            },
+            {
+              "Description": "Framed picture of Kremlin",
+              "Source": "Bilateral meeting in Japan - Courtesy gift",
+              "Value": "R500"
+            },
+            {
+              "Description": "iKhamba [hand made clay pot]",
+              "Source": "Speaking engagement: KZN Courtesy gift",
+              "Value": "R400"
+            },
+            {
+              "Description": "Babylonstoren: Gift pack [health soaps and scented candles",
+              "Source": "Dr Koos Bekker - Season's greetings",
+              "Value": "R500"
+            },
+            {
+              "Description": "Vietnam culture photo frame",
+              "Source": "Bilateral meeting in Vietnam - Courtesy gift",
+              "Value": "R400"
+            }
+          ],
+          "LAND AND PROPERTY": [
+            {
+              "Description": "House",
+              "Extent": "1 200sq.m.",
+              "Location": "Pretoria"
+            },
+            {
+              "Description": "Flat",
+              "Extent": "110sq.m.",
+              "Location": "Durban"
+            }
+          ],
+          "PENSIONS": [
+            {
+              "Public/Private": "Public",
+              "Source": "GEPF"
+            },
+            {
+              "Public/Private": "Private",
+              "Source": "Investment Solutions: Living Annuity"
+            },
+            {
+              "Public/Private": "Private",
+              "Source": "Investment Solutions: Retirement Annuity"
+            }
+          ],
+          "SHARES AND OTHER FINANCIAL INTERESTS": [
+            {
+              "Name of Company": "BHP Billiton PLC",
+              "Nature": "General mining",
+              "No": "200",
+              "Nominal Value": "R51 190"
+            },
+            {
+              "Name of Company": "Imperial Holdings Ltd",
+              "Nature": "Transport Services",
+              "No": "100",
+              "Nominal Value": "R18 300"
+            },
+            {
+              "Name of Company": "SABMiller PLC",
+              "Nature": "Brewers",
+              "No": "30",
+              "Nominal Value": "R65 564"
+            },
+            {
+              "Name of Company": "British American Tobacco Plc",
+              "Nature": "Tobacco",
+              "No": "30",
+              "Nominal Value": "R20 436.30"
+            },
+            {
+              "Name of Company": "SASOL",
+              "Nature": "Integrated oil and gas",
+              "No": "250",
+              "Nominal Value": "R109 445"
+            },
+            {
+              "Name of Company": "Anglo American PLC",
+              "Nature": "General mining",
+              "No": "250",
+              "Nominal Value": "R48 147.50"
+            },
+            {
+              "Name of Company": "BHP Billiton PLC",
+              "Nature": "General mining",
+              "No": "350",
+              "Nominal Value": "R89 593"
+            },
+            {
+              "Name of Company": "South32 Limited",
+              "Nature": "General mining",
+              "No": "350",
+              "Nominal Value": "R7 042"
+            },
+            {
+              "Name of Company": "Bidvest",
+              "Nature": "Diversified Industrials",
+              "No": "413",
+              "Nominal Value": "R125 341.37"
+            },
+            {
+              "Name of Company": "Remgro",
+              "Nature": "Diversifid Industrials",
+              "No": "500",
+              "Nominal Value": "R124 030"
+            },
+            {
+              "Name of Company": "Tiger Brands",
+              "Nature": "Food products",
+              "No": "150",
+              "Nominal Value": "R42 895.50"
+            },
+            {
+              "Name of Company": "ASPEN",
+              "Nature": "Pharmaceuticals",
+              "No": "450",
+              "Nominal Value": "R168 142.50"
+            },
+            {
+              "Name of Company": "Naspers",
+              "Nature": "Broadcasting",
+              "No": "170",
+              "Nominal Value": "R308 140.30"
+            },
+            {
+              "Name of Company": "SPAR",
+              "Nature": "Foodretailers",
+              "No": "800",
+              "Nominal Value": "R148 464"
+            },
+            {
+              "Name of Company": "MTN",
+              "Nature": "Mobile telecommunications",
+              "No": "800",
+              "Nominal Value": "R174 032"
+            },
+            {
+              "Name of Company": "RMB Holdings",
+              "Nature": "Banks",
+              "No": "2 000",
+              "Nominal Value": "R134 300"
+            },
+            {
+              "Name of Company": "Standard Bank",
+              "Nature": "Banks",
+              "No": "900",
+              "Nominal Value": "R147 096"
+            },
+            {
+              "Name of Company": "Reinet Investment",
+              "Nature": "Equity investment instrument",
+              "No": "2 500",
+              "Nominal Value": "R64 325"
+            },
+            {
+              "Name of Company": "RMI Holdings",
+              "Nature": "Equity Investment",
+              "No": "3 000",
+              "Nominal Value": "R130 500"
+            },
+            {
+              "Name of Company": "ABIL",
+              "Nature": "Unquoted gilts",
+              "No": "8 311.95",
+              "Nominal Value": "R7 480.76"
+            },
+            {
+              "Name of Company": "ABIL",
+              "Nature": "Unquoted gilts",
+              "No": "24,3342.58",
+              "Nominal Value": "R21 909.22"
+            },
+            {
+              "Name of Company": "Capital Property Fund",
+              "Nature": "Real Estate Investment Trusts",
+              "No": "14 000",
+              "Nominal Value": "R195 720"
+            },
+            {
+              "Name of Company": "EMIRA",
+              "Nature": "Real Estate Investment Trusts",
+              "No": "4 500",
+              "Nominal Value": "R81 675"
+            },
+            {
+              "Name of Company": "Growth Point",
+              "Nature": "Real Estate Investment Trusts",
+              "No": "8 000",
+              "Nominal Value": "R208 640"
+            },
+            {
+              "Name of Company": "HYPROP",
+              "Nature": "Real Estate Investment Trusts",
+              "No": "2 000",
+              "Nominal Value": "R240"
+            },
+            {
+              "Name of Company": "ABSA",
+              "Nature": "Listed preference shares",
+              "No": "230",
+              "Nominal Value": "R179 400"
+            },
+            {
+              "Name of Company": "First Rand",
+              "Nature": "Listed preference shares",
+              "No": "2 200",
+              "Nominal Value": "R184 800"
+            },
+            {
+              "Name of Company": "Nedbank",
+              "Nature": "Listed preference shares",
+              "No": "19 000",
+              "Nominal Value": "R171 000"
+            },
+            {
+              "Name of Company": "Standard Bank",
+              "Nature": "Listed preference shares",
+              "No": "2 200",
+              "Nominal Value": "R183 700"
+            },
+            {
+              "Name of Company": "Remgro Ltd",
+              "Nature": "Diversified industries",
+              "No": "75",
+              "Nominal Value": "R18 604.50"
+            },
+            {
+              "Name of Company": "Impala Platinum Holdings",
+              "Nature": "Plat",
+              "No": "2",
+              "Nominal Value": "R246.40"
+            },
+            {
+              "Name of Company": "Pick N Pay Holdings Ltd",
+              "Nature": "Food retail",
+              "No": "500",
+              "Nominal Value": "R12 500"
+            },
+            {
+              "Name of Company": "SABMiller PLC",
+              "Nature": "Brewers",
+              "No": "300",
+              "Nominal Value": "R196 692"
+            }
+          ]
+        },
+        "Parliament Register of Members' Interests 2016": {
+          "GIFTS AND HOSPITALITY": [
+            {
+              "Description": "Babylonstoren: Gift pack [health soaps and scented candles picnic basket]",
+              "Source": "Seasons Greetings: Mr Koos Bekker and family",
+              "Value": "R800"
+            },
+            {
+              "Description": "Nestle box of chocolates",
+              "Source": "Courtesy gift: Nestle",
+              "Value": "R200"
+            },
+            {
+              "Description": "One 1lt Johnnie Walker and Wine",
+              "Source": "Seasons greetings: Embassy of Palestine",
+              "Value": "R700"
+            },
+            {
+              "Description": "Bouquet of flowers and keyring",
+              "Source": "Courtesy gift: IMFO",
+              "Value": "R500"
+            },
+            {
+              "Description": "Health fruit basket",
+              "Source": "Courtesy gift: Ms C September",
+              "Value": "R800"
+            },
+            {
+              "Description": "Iranian cultural gifts",
+              "Source": "Courtesy gifts: Islamic Republic of Iran",
+              "Value": "Unknown"
+            }
+          ],
+          "LAND AND PROPERTY": [
+            {
+              "Description": "House",
+              "Extent": "1 112sq.m.",
+              "Location": "Groenkloof"
+            },
+            {
+              "Description": "Flat",
+              "Extent": "120sq.m.",
+              "Location": "Durban"
+            }
+          ],
+          "PENSIONS": [
+            {
+              "Public/Private": "Public",
+              "Source": "GEPF Special Pension"
+            }
+          ],
+          "SHARES AND OTHER FINANCIAL INTERESTS": [
+            {
+              "Name of Company": "BHP Billiton PLC",
+              "Nature": "General mining",
+              "No": "200",
+              "Nominal Value": "R36 514"
+            },
+            {
+              "Name of Company": "Impala Platinum Holdings",
+              "Nature": "Plat and prescious metal",
+              "No": "4",
+              "Nominal Value": "R202.08"
+            },
+            {
+              "Name of Company": "Remgro Ltd",
+              "Nature": "Diversified industries",
+              "No": "75",
+              "Nominal Value": "R18 454.50"
+            },
+            {
+              "Name of Company": "Imperial Holdings Ltd",
+              "Nature": "Transport services",
+              "No": "100",
+              "Nominal Value": "R13 337"
+            },
+            {
+              "Name of Company": "SABMiller PLC",
+              "Nature": "Brewers",
+              "No": "100",
+              "Nominal Value": "R91 800"
+            },
+            {
+              "Name of Company": "British American Tobacco Plc",
+              "Nature": "Tobacco",
+              "Nominal Value": "R27 657"
+            },
+            {
+              "Name of Company": "Pick n Pay Holdings Ltd",
+              "Nature": "Food retail and wholesale R15 700",
+              "No": "500"
+            },
+            {
+              "Name of Company": "Sasol",
+              "Nature": "Integrated oil and gas",
+              "No": "250",
+              "Nominal Value": "R112 822"
+            },
+            {
+              "Name of Company": "Bidvest",
+              "Nature": "Diversified industries",
+              "No": "350",
+              "Nominal Value": "R125 583"
+            },
+            {
+              "Name of Company": "Remgro",
+              "Nature": "Diversified industries",
+              "No": "500",
+              "Nominal Value": "R123 030"
+            },
+            {
+              "Name of Company": "Imperial",
+              "Nature": "Transport services",
+              "No": "200",
+              "Nominal Value": "R26 674"
+            },
+            {
+              "Name of Company": "SABMiller",
+              "Nature": "Brewers",
+              "No": "200",
+              "Nominal Value": "R182 600"
+            },
+            {
+              "Name of Company": "Tiger Brands",
+              "Nature": "Food products",
+              "No": "150",
+              "Nominal Value": "R51 531"
+            },
+            {
+              "Name of Company": "Steinhoff International Holdings",
+              "Nature": "Furnishings",
+              "No": "600",
+              "Nominal Value": "R52 980"
+            },
+            {
+              "Name of Company": "ASPEN",
+              "Nature": "`Pharmaceuticals",
+              "No": "300",
+              "Nominal Value": "R95 214"
+            },
+            {
+              "Name of Company": "Mr Price Group",
+              "Nature": "Apparel retailers",
+              "No": "80",
+              "Nominal Value": "R14 328"
+            },
+            {
+              "Name of Company": "Naspers",
+              "Nature": "Broadcasting",
+              "No": "120",
+              "Nominal Value": "R237 600"
+            },
+            {
+              "Name of Company": "Woolies",
+              "Nature": "Broadline retailers",
+              "No": "200",
+              "Nominal Value": "R18 110"
+            },
+            {
+              "Name of Company": "SPAR",
+              "Nature": "Food retailers and wholesalers",
+              "No": "600",
+              "Nominal Value": "R128 346"
+            },
+            {
+              "Name of Company": "Spurcorp",
+              "Nature": "Restaurant and bars",
+              "No": "500",
+              "Nominal Value": "R16 000"
+            },
+            {
+              "Name of Company": "MTN",
+              "Nature": "Mobile Telecommunications",
+              "No": "400",
+              "Nominal Value": "R52 864"
+            },
+            {
+              "Name of Company": "Nedbank",
+              "Nature": "Banks",
+              "No": "100",
+              "Nominal Value": "R17 366"
+            },
+            {
+              "Name of Company": "RBNH",
+              "Nature": "Banks",
+              "No": "2 000",
+              "Nominal Value": "R107 000"
+            },
+            {
+              "Name of Company": "Standard Bank",
+              "Nature": "Banks",
+              "No": "900",
+              "Nominal Value": "R106 191"
+            },
+            {
+              "Name of Company": "Reinet Investment SCA",
+              "Nature": "Equity investment",
+              "No": "2 000",
+              "Nominal Value": "R66 100"
+            },
+            {
+              "Name of Company": "Rand Merchant Investment",
+              "Nature": "Equity Investments",
+              "No": "2 500",
+              "Nominal Value": "R102 500"
+            },
+            {
+              "Name of Company": "EOH Holdings Limited",
+              "Nature": "Computer",
+              "No": "430",
+              "Nominal Value": "R58 247"
+            },
+            {
+              "Name of Company": "African Bank Income",
+              "Nature": "Unquoted gifts",
+              "No": "6,649",
+              "Nominal Value": "R6 649"
+            },
+            {
+              "Name of Company": "African Bank Income",
+              "Nature": "Unquoted gifts",
+              "No": "19,474",
+              "Nominal Value": "R19 474"
+            },
+            {
+              "Name of Company": "Fortress A Linked Trusts",
+              "Nature": "Real Estate Investment Trust",
+              "No": "3 500",
+              "Nominal Value": "R53 585"
+            },
+            {
+              "Name of Company": "Fortress B Linked Units",
+              "Nature": "Real Estate Investment Trust",
+              "No": "3 500",
+              "Nominal Value": "R128 065"
+            },
+            {
+              "Name of Company": "Growthpoint",
+              "Nature": "Real Estate Investment Trust",
+              "No": "6 000",
+              "Nominal Value": "R142 680"
+            },
+            {
+              "Name of Company": "Hyprop",
+              "Nature": "Real Estate Investment Trust",
+              "No": "1 500",
+              "Nominal Value": "R176 710"
+            },
+            {
+              "Name of Company": "Rebosis Property Fund Limited",
+              "Nature": "Real Estate Investment Trust",
+              "No": "5 000",
+              "Nominal Value": "R52 500"
+            },
+            {
+              "Name of Company": "Nedbank Prefs",
+              "Nature": "Listed Preference share",
+              "No": "19 000",
+              "Nominal Value": "R174 800"
+            },
+            {
+              "Name of Company": "Absa Bank Prefs",
+              "Nature": "Listed Preference share",
+              "No": "230",
+              "Nominal Value": "R178 710"
+            },
+            {
+              "Name of Company": "First Rand Prefs",
+              "Nature": "Listed Preference share",
+              "No": "2 200",
+              "Nominal Value": "R188 100"
+            }
+          ]
+        }
+      },
+      "memberships": [
+        {
+          "id": "core_position:53279",
+          "identifiers": [],
+          "legislative_period_id": "na25",
+          "organization_id": "core_organisation:77",
+          "person_id": "core_person:539",
+          "role": "Member",
+          "start_date": "2014-03"
+        },
+        {
+          "id": "core_position:71583",
+          "identifiers": [],
+          "organization_id": "core_organisation:72",
+          "person_id": "core_person:539",
+          "role": "Minister of Public Enterprises",
+          "start_date": "2018-02-26"
+        },
+        {
+          "id": "core_position:66996",
+          "identifiers": [],
+          "legislative_period_id": "na25",
+          "organization_id": "core_organisation:70",
+          "person_id": "core_person:539",
+          "role": "Member",
+          "start_date": "2014-05-21"
+        },
+        {
+          "end_date": "2015-12-13",
+          "id": "core_position:66872",
+          "identifiers": [],
+          "organization_id": "core_organisation:72",
+          "person_id": "core_person:539",
+          "role": "Minister of Cooperative Governance and Traditional Affairs",
+          "start_date": "2014-05-26"
+        },
+        {
+          "end_date": "2014-05-21",
+          "id": "core_position:67820",
+          "identifiers": [],
+          "organization_id": "core_organisation:70",
+          "person_id": "core_person:539",
+          "role": "Member-elect",
+          "start_date": "2014-05-16"
+        },
+        {
+          "end_date": "2017-03-30",
+          "id": "core_position:42982",
+          "identifiers": [],
+          "organization_id": "core_organisation:72",
+          "person_id": "core_person:539",
+          "role": "Minister of Finance",
+          "start_date": "2015-12-13"
+        },
+        {
+          "end_date": "2018-02-26",
+          "id": "core_position:71305",
+          "identifiers": [],
+          "organization_id": "core_organisation:91",
+          "person_id": "core_person:539",
+          "role": "Alternate Member",
+          "start_date": "2017-05-23"
+        },
+        {
+          "end_date": "2014-05-07",
+          "id": "core_position:53280",
+          "identifiers": [],
+          "organization_id": "core_organisation:835",
+          "person_id": "core_person:539",
+          "role": "13rd Candidate",
+          "start_date": "2014-04-22"
+        },
+        {
+          "end_date": "2014",
+          "id": "core_position:70846",
+          "identifiers": [],
+          "organization_id": "core_organisation:72",
+          "person_id": "core_person:539",
+          "role": "Minister of Finance",
+          "start_date": "2009"
+        },
+        {
+          "end_date": "2018-02-26",
+          "id": "core_position:71290",
+          "identifiers": [],
+          "legislative_period_id": "na26",
+          "organization_id": "core_organisation:101",
+          "person_id": "core_person:539",
+          "role": "Member",
+          "start_date": "2017-05-23"
+        }
+      ],
+      "name": "Pravin Jamnadas Gordhan",
+      "other_names": [
+        {
+          "name": "Pravin Gordhan"
+        }
+      ],
+      "pa_url": "http://www.pa.org.za/person/pravin-gordhan/",
+      "sort_name": "Gordhan",
+      "summary": "Mr Gordhan is currently serving as the Minister of Public Enterprises. He served as the Minister of Finance from 2009 until 2014. In December 2015 he was reappointed as the Minister of Finance until the reshuffle of 31 March 2017. Mr Gordhan entered South African politics during the height of the struggle against Apartheid. He led and organised the Student Movement and Civic Structures from the 1970’s to 1980’s. Before becoming the Minister of Finance, Mr Gordhan was involved in the CODESA multi-party dialogue, participated in drafting the White Paper for Local Government and was appointed as the Chairperson of the Parliamentary Constitutional Committee in Parliament where he had the responsibility of overseeing the implementation of the 1996 Constitution. Additionally, he served as the Deputy Commissioner of the South African Revenue Service (SARS) from 1998 to 1999 and was appointed as the Commissioner of SARS in 1999. He completed a DTech degree in Business Administration at the Free State Central University of Technology in 2009 and received an Honorary Doctorate of Commerce from UNISA and an Honorary Doctorate of Law from UCT in 2007 respectively. (gov.za)"
+    },
+    {
+      "contact_details": [
+        {
+          "type": "cell",
+          "value": "082 531 4004"
+        },
+        {
+          "type": "email",
+          "value": "julius.sello@gmail.com"
+        },
+        {
+          "type": "twitter",
+          "value": "Julius_S_Malema"
+        },
+        {
+          "type": "voice",
+          "value": "-"
+        }
+      ],
+      "family_name": "Malema",
+      "gender": "male",
+      "given_name": "Julius Sello",
+      "id": "core_person:6674",
+      "identifiers": [
+        {
+          "identifier": "Q983163",
+          "scheme": "wikidata"
+        },
+        {
+          "identifier": "aaf41f1e-d6ef-4758-8518-aaef7445e78e",
+          "scheme": "everypolitician"
+        },
+        {
+          "identifier": "692",
+          "scheme": "za.org.pmg.api/member"
+        },
+        {
+          "identifier": "julius-sello-malema",
+          "scheme": "pombola-slug"
+        }
+      ],
+      "images": [
+        {
+          "url": "http://www.pa.org.za/media_root/images/1628.jpg"
+        }
+      ],
+      "interests_register": {
+        "Parliament Register of Members' Interests 2014": {
+          "SHARES AND OTHER FINANCIAL INTERESTS": [
+            {
+              "Name of Company": "Ratanang Family Trust"
+            },
+            {
+              "Name of Company": "Mazimbu Investment Trust"
+            },
+            {
+              "Name of Company": "Munzhedzi Family Trust"
+            },
+            {
+              "Name of Company": "Kopano Charity Trust"
+            }
+          ]
+        },
+        "Parliament Register of Members' Interests 2015": {
+          "GIFTS AND HOSPITALITY": [
+            {
+              "Description": "Bottle of wine [DIE LAAN 2010]",
+              "Source": "Stellenbosch University",
+              "Value": "R90"
+            }
+          ],
+          "SHARES AND OTHER FINANCIAL INTERESTS": [
+            {
+              "Name of Company": "Ratanang Family Trust"
+            },
+            {
+              "Name of Company": "Kopano Charity Trust"
+            },
+            {
+              "Name of Company": "Mazimbu Investment Trust"
+            },
+            {
+              "Name of Company": "Munzhedzi Family Trust"
+            }
+          ],
+          "TRUSTS": [
+            {
+              "Details Of Benefits": "None",
+              "Name Of Trusts": "Kopano Charity Trust"
+            },
+            {
+              "Details Of Benefits": "None",
+              "Name Of Trusts": "Mazimbu Investment Trust"
+            },
+            {
+              "Details Of Benefits": "None",
+              "Name Of Trusts": "Munzhedzi Family Trust"
+            },
+            {
+              "Details Of Benefits": "None",
+              "Name Of Trusts": "Ratanang Family Trust",
+              "Trustee/Beneficiary": "J S Malema"
+            }
+          ]
+        },
+        "Parliament Register of Members' Interests 2016": {
+          "SHARES AND OTHER FINANCIAL INTERESTS": [
+            {
+              "Name of Company": "Ratanang Family Trust"
+            },
+            {
+              "Name of Company": "Kopano Charity Trust"
+            },
+            {
+              "Name of Company": "Mazimbu Investment Trust"
+            },
+            {
+              "Name of Company": "Munshedzi Family Trust"
+            }
+          ],
+          "TRUSTS": [
+            {
+              "Details Of Benefits": "None",
+              "Name Of Trusts": "Kopano Chairty Trust"
+            },
+            {
+              "Details Of Benefits": "None",
+              "Name Of Trusts": "Munzhedzi Family Trust"
+            },
+            {
+              "Details Of Benefits": "None",
+              "Name Of Trusts": "Mazimbu Investment Trust"
+            },
+            {
+              "Details Of Benefits": "None",
+              "Name Of Trusts": "Ratanang Family Trust",
+              "Trustee/Beneficiary": "J S Malema"
+            }
+          ]
+        }
+      },
+      "memberships": [
+        {
+          "id": "core_position:70401",
+          "identifiers": [],
+          "organization_id": "core_organisation:1390",
+          "person_id": "core_person:6674",
+          "role": "Constituency Contact",
+          "start_date": "2014-05-21"
+        },
+        {
+          "end_date": "2016-09-14",
+          "id": "core_position:69386",
+          "identifiers": [],
+          "legislative_period_id": "na26",
+          "organization_id": "core_organisation:196",
+          "person_id": "core_person:6674",
+          "role": "Member",
+          "start_date": "2014-06"
+        },
+        {
+          "end_date": "2014-05-07",
+          "id": "core_position:59586",
+          "identifiers": [],
+          "organization_id": "core_organisation:955",
+          "person_id": "core_person:6674",
+          "role": "1st Candidate",
+          "start_date": "2014-04-22"
+        },
+        {
+          "id": "core_position:59585",
+          "identifiers": [],
+          "legislative_period_id": "na25",
+          "organization_id": "core_organisation:810",
+          "person_id": "core_person:6674",
+          "role": "Member"
+        },
+        {
+          "id": "core_position:67092",
+          "identifiers": [],
+          "legislative_period_id": "na25",
+          "organization_id": "core_organisation:70",
+          "person_id": "core_person:6674",
+          "role": "Member",
+          "start_date": "2014-05-21"
+        },
+        {
+          "end_date": "2014-05-21",
+          "id": "core_position:67977",
+          "identifiers": [],
+          "organization_id": "core_organisation:70",
+          "person_id": "core_person:6674",
+          "role": "Member-elect",
+          "start_date": "2014-05-16"
+        },
+        {
+          "end_date": "2016-09-14",
+          "id": "core_position:70516",
+          "identifiers": [],
+          "organization_id": "core_organisation:127",
+          "person_id": "core_person:6674",
+          "role": "Alternate Member",
+          "start_date": "2015-03-10"
+        },
+        {
+          "end_date": "2016-09-14",
+          "id": "core_position:70628",
+          "identifiers": [],
+          "legislative_period_id": "na26",
+          "organization_id": "core_organisation:1180",
+          "person_id": "core_person:6674",
+          "role": "Member",
+          "start_date": "2015-06-18"
+        },
+        {
+          "id": "core_position:70980",
+          "identifiers": [],
+          "legislative_period_id": "na25",
+          "organization_id": "core_organisation:1406",
+          "person_id": "core_person:6674",
+          "role": "Member",
+          "start_date": "2016-05-26"
+        }
+      ],
+      "name": "Julius Sello Malema",
+      "other_names": [],
+      "pa_url": "http://www.pa.org.za/person/julius-sello-malema/",
+      "sort_name": "Malema",
+      "summary": "Julius Sello Malema (born 3 March 1981) is the leader of the Economic Freedom Fighters, a party he founded in July 2013. Mr Malema previously served as President of the ANC Youth League from 2008 to 2012 until his expulsion from the party in April 2012. Mr Malema graduated from Mohlakaneng High School, Seshego, Limpopo. In 2010, he completed a two-year diploma in youth development through UNISA. In 2011 he enrolled at UNISA for a Bachelor of Arts degree in Communications and African languages, and he graduated in March 2016"
+    },
+    {
+      "contact_details": [
+        {
+          "type": "voice",
+          "value": "073 151 0383"
+        }
+      ],
+      "id": "core_person:3827",
+      "identifiers": [
+        {
+          "identifier": "agrippa-maphisa",
+          "scheme": "pombola-slug"
+        }
+      ],
+      "memberships": [
+        {
+          "end_date": "2014-05-06",
+          "id": "core_position:52341",
+          "identifiers": [],
+          "organization_id": "core_organisation:490",
+          "person_id": "core_person:3827",
+          "role": "Administrator"
+        }
+      ],
+      "name": "Agrippa Maphisa",
+      "other_names": [],
+      "pa_url": "http://www.pa.org.za/person/agrippa-maphisa/",
+      "sort_name": "Maphisa"
+    }
+  ],
+  "posts": []
+}
