@@ -4,56 +4,59 @@
 {% block meta_title %}{{ person.name }} | Public People{% endblock %}
 {% block content %}
 
-<div class="person-identity">
-  <img class="headshot center-block"
-       {% if person.image %}
-       src="{{ person.image }}"
-       alt="Headshot of {{ person.name }}"
-       {% else %}
-       src="/static/images/user.png"
-       alt="No headshot of {{ person.name }} available yet"
-       {% endif %}
-       />
+<div class="person-page">
 
-  <h2 class="person-name">{{ person.name }}</h2>
-</div>
+  <div class="person-identity">
+    <img class="headshot"
+         {% if person.image %}
+         src="{{ person.image }}"
+         alt="Headshot of {{ person.name }}"
+         {% else %}
+         src="/static/images/user.png"
+         alt="No headshot of {{ person.name }} available yet"
+         {% endif %}
+         />
 
-<div>News matching "{{ name_query }}"</div>
+    <h2 class="person-name">{{ person.name }}</h2>
+  </div>
 
-{% include 'snippets/pager.html' %}
+  <div>News matching "{{ name_query }}"</div>
+
+  {% include 'snippets/pager.html' %}
 
 
-{% for date_group in date_groups %}
+  {% for date_group in date_groups %}
 
-<div><h4>{{ date_group.date }}</h4></div>
+  <div><h4>{{ date_group.date }}</h4></div>
 
-  <div class="list-group">
-  {% for event in date_group.events %}
+    <div class="list-group">
+    {% for event in date_group.events %}
 
-    {% if event.type == 'article' %}
-    <a href="{{ event.article.source_url }}" class="list-group-item news-link" target="_blank" rel="noopener noreferrer">
+      {% if event.type == 'article' %}
+      <a href="{{ event.article.source_url }}" class="list-group-item news-link" target="_blank" rel="noopener noreferrer">
 
-      <div class="">
-        {{ event.article.title }}
+        <div class="">
+          {{ event.article.title }}
+        </div>
+
+        <div class="text-muted">
+          Mentioned in {{ event.article.collection.label }}
+        </div>
+
+      </a><!-- end .list-group-item -->
+
+      {% else %}
+      <div class="list-group-item">
+        {{ event.type }} as
+        {{ event.membership.role }} of {{ event.membership.organization.name }}
       </div>
+      {% endif %}
+    {% endfor %}
+    </div><!-- end .list-group -->
 
-      <div class="text-muted">
-        Mentioned in {{ event.article.collection.label }}
-      </div>
-
-    </a><!-- end .list-group-item -->
-
-    {% else %}
-    <div class="list-group-item">
-      {{ event.type }} as
-      {{ event.membership.role }} of {{ event.membership.organization.name }}
-    </div>
-    {% endif %}
   {% endfor %}
-  </div><!-- end .list-group -->
 
-{% endfor %}
-
+</div><!--/.person-page -->
 
 {% include 'snippets/pager.html' %}
 
