@@ -121,8 +121,6 @@ dokku config:set DATABASE_URL=postgresql://.../publicpeople \
                  DJANGO_DEBUG=false \
                  DISABLE_COLLECTSTATIC=1 \
                  DJANGO_SECRET_KEY=some-secret-key \
-                 NEW_RELIC_APP_NAME=cool app name \
-                 NEW_RELIC_LICENSE_KEY=new relic license key
 ```
 
 After pushing to the dokku git remote:
