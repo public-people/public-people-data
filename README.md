@@ -32,44 +32,53 @@ On the client:
 Setting up your dev environment
 -------------------------------
 
-Clone this git repository
+Configuration for running the server and database in docker-compose has been provided. The simplest way to get up and running is using docker-compose but nothin strictly depends on it, so feel free to set up another way, bearing in mind that less support would be available.
 
-[Create a project python 2 virtual environment](https://realpython.com/python-virtual-environments-a-primer/#using-virtual-environments) in the repository directory and activate it
+The following only has to be run the first time you set up your development environment, or when you've deleted the database volume and want to set it up again.
 
-Install python dependencies using `pip install -r requirements.txt`
+1. Clone this git repository and change into the repository directory.
 
-[Create a database](https://gist.github.com/jbothma/8a9a30399c2091d89763bff0a1952da4)
-
-Then, the first time you run the server, run migrations and create a superuser
+2. Start and create the database - this will keep the docker-compose log running in this shell
 
 ```
-python manage.py migrate
-python manage.py createsuperuser
+docker-compose up db
 ```
 
-Update popolo data:
-
-The first time, create the source
+3. Then in another shell prompt, initialise the database and superuser:
 
 ```
-python manage.py popolo_sources_update --create https://www.pa.org.za/media_root/popolo_json/pombola.json
+docker-compose run --rm web python manage.py migrate
+docker-compose run --rm web python manage.py createsuperuser
 ```
 
-Subsequently, just update (without `--create`)
+4. Start the sample data server
 
 ```
-python manage.py popolo_sources_update https://www.pa.org.za/media_root/popolo_json/pombola.json
+docker-compose -f docker-compose.yml -f docker-compose.dev-data.yml up -d dev-data
+```
+
+5. Load some example popolo data:
+
+```
+docker-compose run --rm web python manage.py popolo_sources_update --create http://dev-data:8001/pombola.json
 ```
 
 Then you can run the server
 
 ```
-python manage.py runserver
+docker-compose up -d web
 ```
 
 You can log in as your new superuser and explore the data using the admin interface at http://localhost:8000/admin and the public interface at http://localhost:8000/
 
 Search for one of the names in the example popolo data to see the site working.
+
+
+Subsequently, you only need to start the database and server with
+
+```
+docker-compose up
+```
 
 
 Development
