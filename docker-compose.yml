@@ -10,7 +10,9 @@ services:
       - db-data:/var/lib/postgresql/data
 
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
     command: python manage.py runserver 0.0.0.0:8000
     environment:
       - DATABASE_URL=postgres://publicpeople@db/publicpeople
