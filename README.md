@@ -32,7 +32,7 @@ On the client:
 Setting up your dev environment
 -------------------------------
 
-Configuration for running the server and database in docker-compose has been provided. The simplest way to get up and running is using docker-compose but nothin strictly depends on it, so feel free to set up another way, bearing in mind that less support would be available.
+Configuration for running the server and database in docker-compose has been provided. The simplest way to get up and running is using docker-compose but nothing strictly depends on it, so feel free to set up another way, bearing in mind that less support would be available.
 
 The following only has to be run the first time you set up your development environment, or when you've deleted the database volume and want to set it up again.
 
@@ -80,6 +80,23 @@ Subsequently, you only need to start the database and server with
 docker-compose up
 ```
 
+### Resetting the development database to revert changes
+
+There are two ways to reset the development database back to the way it's just been set up:
+
+The popolo data can be loaded again, which will "update" it back to its current state, but not delete anything you've added manually:
+
+```
+docker-compose run --rm web python manage.py popolo_sources_update http://dev-data:8001/pombola.json
+```
+
+Or you can delete the database server and its data and set up your development environment from scratch:
+
+```
+docker-compose rm -sfv
+docker volume ls; docker volume rm public-people-data_db-data
+```
+
 
 Development
 -----------
@@ -88,6 +105,8 @@ Development
 * Put SCSS stylesheets into ``code4sa/static/stylesheets/app.scss``
 * Install new asset packs with Bower: ``bower install -Sp package-to-install``
 * Get better debugging with ``python manage.py runserver_plus``
+
+
 
 Production deployment
 ---------------------
