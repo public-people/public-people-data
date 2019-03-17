@@ -4,24 +4,37 @@
 {% block meta_title %}Public People{% endblock %}
 {% block content %}
 
-<p>Find people who are involved with running South Africa and learn about who they are.</p>
+<div class="person-search">
+  <p>Find people who are involved with running South Africa and learn about who they are.</p>
 
-<form id="searchform" action="{% url 'person_list' %}" method="get" accept-charset="utf-8">
-  <button class="searchbutton" type="submit">
-    <i class="fa fa-search"></i>
-  </button>
-  <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search" value="{{ q }}">
-</form>
+  <form id="searchform" action="{% url 'person_list' %}" method="get" accept-charset="utf-8">
+    <button class="searchbutton" type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+    <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search" value="{{ q }}">
+  </form>
 
-<h2>Persons</h2>
+  <h2>Persons</h2>
 
-{% for result_item in object_list %}
-<a href="{{ result_item.url }}">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{ result_item.obj.name }}</h3>
-    </div>
-    <div class="panel-body">
+  {% for result_item in object_list %}
+  <div class="media">
+    <div class="media-left media-top">
+      <a href="{{ result_item.url }}">
+        <img class="media-object headshot"
+             {% if result_item.obj.image %}
+             src="{{ result_item.obj.image }}"
+             alt="Headshot of {{ result_item.obj.name }}"
+             {% else %}
+             src="/static/images/user.png"
+             alt="No headshot of {{ result_item.obj.name }} available yet"
+             {% endif %}
+           />
+      </a>
+    </div><!--/.media-left -->
+    <div class="media-body">
+      <a href="{{ result_item.url }}">
+        <h3 class="media-heading">{{ result_item.obj.name }}</h3>
+      </a>
       {% if result_item.obj.current_memberships %}
       <p>Current memberships:</p>
       <ul>
@@ -38,26 +51,27 @@
         {% endfor %}
       </ul>
       {% endif %}
-    </div><!-- end .panel-body -->
-  </div><!-- end .panel -->
-</a>
-{% endfor %}
+    </div><!--/.media-body -->
+  </div>
+  {% endfor %}
 
 
-{% if is_paginated %}
-<div class="pagination">
-  <span class="page-links">
-    {% if page_obj.has_previous %}
-    <a href="/?page={{ page_obj.previous_page_number }}&q={{ q|urlencode }}">previous</a>
-    {% endif %}
-    <span class="page-current">
-      Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+  {% if is_paginated %}
+  <div class="pagination">
+    <span class="page-links">
+      {% if page_obj.has_previous %}
+      <a href="/?page={{ page_obj.previous_page_number }}&q={{ q|urlencode }}">previous</a>
+      {% endif %}
+      <span class="page-current">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+      </span>
+      {% if page_obj.has_next %}
+      <a href="/?page={{ page_obj.next_page_number }}&q={{ q|urlencode }}">next</a>
+      {% endif %}
     </span>
-    {% if page_obj.has_next %}
-    <a href="/?page={{ page_obj.next_page_number }}&q={{ q|urlencode }}">next</a>
-    {% endif %}
-  </span>
-</div>
-{% endif %}
+  </div>
+  {% endif %}
+
+</div><!--/.person-search>
 
 {% endblock %}
