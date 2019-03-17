@@ -13,4 +13,4 @@ before_script:
   - docker-compose up -d web
 
 script:
-  - curl -f http://localhost:8000/?q=julius | grep "Braamfontein"
+  - curl -f --retry 5 --retry-connrefused http://localhost:8000/?q=julius | grep "Braamfontein"
