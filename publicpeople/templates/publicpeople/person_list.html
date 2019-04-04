@@ -5,16 +5,16 @@
 {% block content %}
 
 <div class="person-search">
-  <p>
+  <h1>
     Find people involved with running South Africa.<br>
     Learn who they are.
-  </p>
+  </h1>
 
   <form id="searchform" action="{% url 'person_list' %}" method="get" accept-charset="utf-8">
+    <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search" value="{{ q }}">
     <button class="searchbutton" type="submit">
       <i class="fa fa-search"></i>
     </button>
-    <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search" value="{{ q }}">
   </form>
 
   <h2>Persons</h2>
