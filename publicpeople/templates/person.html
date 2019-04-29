@@ -2,6 +2,10 @@
 
 {% block title %}{{ person.name }} | Public People{% endblock %}
 {% block meta_title %}{{ person.name }} | Public People{% endblock %}
+{% block og_image %}
+<meta property=”og:image” content=”{% firstof person.image "https://publicpeople.org.za/static/images/user.png" %}” />
+{% endblock %}
+
 {% block content %}
 
 <div class="person-page">
