@@ -20,3 +20,8 @@ class Person(popolo.models.Person):
         ).exclude(
             (Q(end_date__exact='') | Q(end_date__isnull=True))
         ).order_by('-end_date').all()
+
+    def pa_url(self):
+        pa_identifier_queryset = self.identifiers.filter(scheme="pombola-slug")
+        if pa_identifier_queryset:
+            return "https://pa.org.za/person/%s/" % pa_identifier_queryset.get().identifier

@@ -66,6 +66,7 @@ class PersonView(TemplateView):
             })
         context = super(TemplateView, self).get_context_data(**kwargs)
         context['person'] = person
+        context['pa_url'] = person.pa_url()
         context['date_groups'] = date_groups
         context['name_query'] = first_last_name
         context['next_url'] = pagination_url(self.request, results['next_offset'])

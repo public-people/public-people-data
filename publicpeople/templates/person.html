@@ -24,7 +24,13 @@
     <h2 class="person-name">{{ person.name }}</h2>
   </div>
 
-  <div>News matching "{{ name_query }}"</div>
+  <div class="row">
+    <div class="col-md-3">News matching "{{ name_query }}"</div>
+
+    {% if pa_url %}
+    <div class="col-md-3 col-md-offset-6 peoples-assembly-link"><a href="{{ pa_url }}">More at People's Assembly</a></div>
+    {% endif %}
+  </div>
 
   {% include 'snippets/pager.html' %}
 
