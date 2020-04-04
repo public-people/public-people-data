@@ -43,14 +43,14 @@
     {% for event in date_group.events %}
 
       {% if event.type == 'article' %}
-      <a href="{{ event.article.source_url }}" class="list-group-item news-link" target="_blank" rel="noopener noreferrer">
+      <a href="{{ event.article.published_url }}" class="list-group-item news-link" target="_blank" rel="noopener noreferrer">
 
         <div class="">
           {{ event.article.title }}
         </div>
 
         <div class="text-muted">
-          Mentioned in {{ event.article.collection.label }}
+          Mentioned in {{ event.article.publication }}
         </div>
 
       </a><!-- end .list-group-item -->
