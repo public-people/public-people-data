@@ -1,4 +1,4 @@
-Django==1.11.20
+Django==1.11.28
 Werkzeug==0.15.3
 dj-database-url==0.3.0
 django_cors_headers==2.2.0
