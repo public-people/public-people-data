@@ -5,6 +5,7 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: publicpeople
+      POSTGRES_PASSWORD: publicpeople
       POSTGRES_DB: publicpeople
     volumes:
       - db-data:/var/lib/postgresql/data
@@ -15,7 +16,7 @@ services:
       dockerfile: Dockerfile-dev
     command: python manage.py runserver 0.0.0.0:8000
     environment:
-      - DATABASE_URL=postgres://publicpeople@db/publicpeople
+      - DATABASE_URL=postgres://publicpeople:publicpeople@db/publicpeople
     volumes:
       - .:/code
     ports:
