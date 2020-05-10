@@ -4,7 +4,7 @@ from popolo.models import (
     Post,
     Area,
 )
-from .models import(
+from .models import (
     Person,
 )
 
@@ -12,8 +12,6 @@ from .news import NewsSearch
 from django.contrib.contenttypes.models import ContentType
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
-from django.urls import reverse
-from django.utils.text import slugify
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 from functools import reduce
@@ -159,10 +157,7 @@ class PersonSearchListView(ListView):
 
     def get_context_data(self, **kwargs):
         def url(obj):
-            return reverse('person', kwargs={
-                'person_id': obj.id,
-                'name_slug': slugify(obj.name),
-            })
+            return obj.get_absolute_url()
         data = super(PersonSearchListView, self).get_context_data(**kwargs)
         object_list = data['object_list']
         object_list = [{'obj': o, 'url': url(o)} for o in object_list]

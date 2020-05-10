@@ -2,6 +2,7 @@ from ajax_select import urls as ajax_select_urls
 from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.views.decorators.cache import cache_page
 
 from rest_framework import routers
@@ -20,7 +21,7 @@ from .views import (
     PopoloSourceViewSet,
     PostViewSet,
 )
-
+from .sitemap import PersonSitemap
 
 CACHE_SECS = 60 * 60 * 24
 
@@ -55,6 +56,9 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     url(r'^graphql', GraphQLView.as_view(graphiql=True)),
+
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': {'persons': PersonSitemap}},
+        name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 if settings.DEBUG:
