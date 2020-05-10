@@ -11,7 +11,7 @@ class NewsSearch():
     @classmethod
     def search(cls, query, offset):
         session = requests.Session()
-        r = session.get('https://news.publicpeople.org.za/api/articles',
+        r = session.get('https://news.publicpeople.org.za/api/articles/',
                         params={
                             'basic_web_search': '"%s"' % query,
                             'limit': PAGE_SIZE,

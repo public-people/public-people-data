@@ -25,13 +25,25 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', 'true') == 'true'
+DEBUG = env.bool('DJANGO_DEBUG', False)
+
+DJANGO_DEBUG_TOOLBAR = env.bool('DJANGO_DEBUG_TOOLBAR', False) and DEBUG
+DEBUG_TOOLBAR_CONFIG = {
+    "SHOW_TOOLBAR_CALLBACK": 'publicpeople.settings.show_toolbar'
+}
+
+
+def show_toolbar(request):
+    print("Checking whether to show toolbar: %r" % DJANGO_DEBUG_TOOLBAR)
+    return DJANGO_DEBUG_TOOLBAR
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 if DEBUG:
     SECRET_KEY = '-r&cjf5&l80y&(q_fiidd$-u7&o$=gv)s84=2^a2$o^&9aco0o'
 else:
     SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+
 
 GOOGLE_TAG_MGR_ID = "GTM-W5PTM6R"
 
@@ -40,7 +52,7 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -62,9 +74,16 @@ INSTALLED_APPS = (
     'rest_framework',
     'django_filters',
     'graphene_django',
-)
+]
+if DJANGO_DEBUG_TOOLBAR:
+    INSTALLED_APPS.append('debug_toolbar')
 
-MIDDLEWARE = (
+MIDDLEWARE = []
+
+if DJANGO_DEBUG_TOOLBAR:
+    MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+
+MIDDLEWARE += [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -74,7 +93,7 @@ MIDDLEWARE = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'simple_history.middleware.HistoryRequestMiddleware',
-)
+]
 
 ROOT_URLCONF = 'publicpeople.urls'
 
@@ -109,8 +128,8 @@ else:
         }
     }
 
-if DEBUG:
-    INTERNAL_IPS = ['127.0.0.1']
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -228,6 +247,9 @@ LOGGING = {
         # 'your_package_name': {
         #    'level': 'DEBUG' if DEBUG else 'INFO',
         # },
+        'django.template': {
+            'level': 'ERROR',
+        },
         'django': {
             'level': 'DEBUG' if DEBUG else 'INFO',
         },

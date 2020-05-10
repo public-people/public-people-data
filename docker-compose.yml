@@ -17,6 +17,8 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     environment:
       - DATABASE_URL=postgres://publicpeople:publicpeople@db/publicpeople
+      - DJANGO_DEBUG=TRUE
+      - DJANGO_DEBUG_TOOLBAR
     volumes:
       - .:/code
     ports:
