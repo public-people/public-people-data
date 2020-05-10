@@ -28,9 +28,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
 DJANGO_DEBUG_TOOLBAR = env.bool('DJANGO_DEBUG_TOOLBAR', False) and DEBUG
-SHOW_TOOLBAR_CALLBACK = 'publicpeople.settings.show_toolbar'
+DEBUG_TOOLBAR_CONFIG = {
+    "SHOW_TOOLBAR_CALLBACK": 'publicpeople.settings.show_toolbar'
+}
+
 
 def show_toolbar(request):
+    print("Checking whether to show toolbar: %r" % DJANGO_DEBUG_TOOLBAR)
     return DJANGO_DEBUG_TOOLBAR
 
 
@@ -243,6 +247,9 @@ LOGGING = {
         # 'your_package_name': {
         #    'level': 'DEBUG' if DEBUG else 'INFO',
         # },
+        'django.template': {
+            'level': 'ERROR',
+        },
         'django': {
             'level': 'DEBUG' if DEBUG else 'INFO',
         },
