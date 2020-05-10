@@ -10,6 +10,11 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
+# Database
+# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+import dj_database_url
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -37,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sitemaps',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pipeline',
@@ -79,9 +85,6 @@ CORS_ALLOW_METHODS = (
     'GET',
 )
 
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-import dj_database_url
 db_config = dj_database_url.config(default='postgres://publicpeople@localhost/publicpeople')
 db_config['ATOMIC_REQUESTS'] = True
 DATABASES = {
