@@ -51,7 +51,7 @@ def group_by_date(events):
             'date': date,
             'events': list(group),
         })
-    return events
+    return date_groups
 
 
 def make_membership_events(memberships):
