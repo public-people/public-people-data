@@ -1,31 +1,23 @@
 from ajax_select import urls as ajax_select_urls
 from django.conf import settings
-from django.conf.urls import url, include
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.decorators.cache import cache_page
-
-from rest_framework import routers
 from graphene_django.views import GraphQLView
-from .views import (
-    AboutView,
-    AreaViewSet,
-    ContactView,
-    ContentTypeViewSet,
-    LinkToPopoloSourceViewSet,
-    MembershipViewSet,
-    OrganizationViewSet,
-    PersonSearchListView,
-    PersonView,
-    PersonViewSet,
-    PopoloSourceViewSet,
-    PostViewSet,
-)
+from rest_framework import routers
 
+from .views import (
+    AboutView, ContactView, PersonSearchListView,
+)
+from .views.person import PersonView
+from .views.api import (
+    AreaViewSet, ContentTypeViewSet,
+    LinkToPopoloSourceViewSet, MembershipViewSet,
+    OrganizationViewSet, PersonViewSet, PopoloSourceViewSet, PostViewSet
+)
 
 CACHE_SECS = 60 * 60 * 24
 
-
-# Routers provide an easy way of automatically determining the URL conf
 router = routers.DefaultRouter()
 router.register(r'persons', PersonViewSet)
 router.register(r'organizations', OrganizationViewSet)

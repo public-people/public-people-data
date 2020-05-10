@@ -1,6 +1,6 @@
 import popolo
-from popolo.models import Membership
 from django.db.models import Q
+from popolo.models import Membership
 
 
 class Person(popolo.models.Person):

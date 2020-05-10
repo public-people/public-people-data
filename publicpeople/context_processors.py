@@ -1,5 +1,6 @@
 from django.conf import settings
 
+
 def google_tag_manager(request):
     """
     Add the Google Tag Manager ID and domain to the context for use when

@@ -1,21 +1,8 @@
 import graphene
-
 from graphene_django.types import DjangoObjectType
-
-from popolo.models import (
-    Person,
-    Organization,
-    Post,
-    Membership,
-    ContactDetail,
-    OtherName,
-    Identifier,
-    Link,
-    Source,
-    Language,
-    Area,
-    AreaI18Name,
-)
+from popolo.models import (Area, AreaI18Name, ContactDetail, Identifier,
+                           Language, Link, Membership, Organization, OtherName,
+                           Person, Post, Source)
 
 
 class PersonType(DjangoObjectType):

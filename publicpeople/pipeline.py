@@ -3,12 +3,10 @@ from __future__ import absolute_import
 import codecs
 
 import scss
-
 from django.conf import settings
-
-from whitenoise.django import GzipManifestStaticFilesStorage
-from pipeline.storage import PipelineMixin
 from pipeline.compilers import SubProcessCompiler
+from pipeline.storage import PipelineMixin
+from whitenoise.django import GzipManifestStaticFilesStorage
 
 
 class GzipManifestPipelineStorage(PipelineMixin, GzipManifestStaticFilesStorage):
