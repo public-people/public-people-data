@@ -10,7 +10,7 @@ def get_first_last_name(full_name):
 
 
 def get_search_query(person):
-    return get_first_last_name(person.name)
+    return person.name
 
 
 def get_timeline(search_results, memberships, is_first_page, is_last_page):
