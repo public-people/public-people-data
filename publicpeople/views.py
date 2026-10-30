@@ -98,7 +98,7 @@ class PersonSearchListView(ListView):
         else:
             result = result.filter(name__in=FEATURED_NAMES)
 
-        return result
+        return result.order_by('name')
 
     def get_context_data(self, **kwargs):
         def url(obj):
@@ -128,7 +128,7 @@ class MembershipViewSet(viewsets.ModelViewSet):
         'person',
         'organization',
     )
-    filter_fields = search_fields
+    filterset_fields = search_fields
 
 
 class PersonSerializer(serializers.ModelSerializer):
@@ -173,7 +173,7 @@ class PersonViewSet(viewsets.ModelViewSet):
         'additional_name',
         'email'
     )
-    filter_fields = search_fields
+    filterset_fields = search_fields
 
 
 class OrganizationSerializer(serializers.ModelSerializer):
@@ -190,7 +190,7 @@ class OrganizationViewSet(viewsets.ModelViewSet):
         'other_names__name',
         'classification',
     )
-    filter_fields = search_fields
+    filterset_fields = search_fields
 
 
 class PostSerializer(serializers.ModelSerializer):

@@ -5,4 +5,4 @@ from .models import Person
 class PersonSitemap(Sitemap):
 
     def items(self):
-        return Person.objects.all()
+        return Person.objects.order_by('pk')
