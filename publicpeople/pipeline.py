@@ -1,21 +1,18 @@
-from __future__ import absolute_import
-
 import codecs
+import os
 
-import scss
-
+import sass
 from django.conf import settings
-
-from whitenoise.django import GzipManifestStaticFilesStorage
-from pipeline.storage import PipelineMixin
 from pipeline.compilers import SubProcessCompiler
+from pipeline.storage import PipelineMixin
+from whitenoise.storage import CompressedManifestStaticFilesStorage
 
 
-class GzipManifestPipelineStorage(PipelineMixin, GzipManifestStaticFilesStorage):
+class GzipManifestPipelineStorage(PipelineMixin, CompressedManifestStaticFilesStorage):
     pass
 
 
-class PyScssCompiler(SubProcessCompiler):
+class SassCompiler(SubProcessCompiler):
     output_extension = 'css'
 
     def match_file(self, filename):
@@ -25,9 +22,14 @@ class PyScssCompiler(SubProcessCompiler):
         if not outdated and not force:
             return
 
-        result = scss.compiler.compile_file(
-            infile,
-            search_path=settings.PYSCSS_LOAD_PATHS)
+        result = sass.compile(
+            filename=infile,
+            include_paths=settings.SASS_INCLUDE_PATHS,
+        )
+
+        output_dir = os.path.dirname(outfile)
+        if output_dir:
+            os.makedirs(output_dir, exist_ok=True)
 
         with codecs.open(outfile, 'w', encoding='utf-8') as f:
             f.write(result)

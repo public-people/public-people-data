@@ -1,9 +1,13 @@
+import os
+
 import requests
 import logging
 
 logger = logging.getLogger(__name__)
 
 PAGE_SIZE = 500
+NEWS_API_URL = os.environ.get(
+    'NEWS_API_URL', 'https://news.publicpeople.org.za/api/articles/')
 
 
 class NewsSearch():
@@ -11,7 +15,7 @@ class NewsSearch():
     @classmethod
     def search(cls, query, offset):
         session = requests.Session()
-        r = session.get('https://news.publicpeople.org.za/api/articles/',
+        r = session.get(NEWS_API_URL,
                         params={
                             'basic_web_search': '"%s"' % query,
                             'limit': PAGE_SIZE,

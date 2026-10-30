@@ -15,10 +15,12 @@ How this project is organised
 
 On the server:
 
+* runs on Python 3.14 and Django 6.1
+* uses [uv](https://docs.astral.sh/uv/) and `pyproject.toml` / `uv.lock` for dependency management
 * uses [dj-database-url](https://crate.io/packages/dj-database-url/) for database URL injection
 * uses [django-pipeline](https://django-pipeline.readthedocs.org/en/latest/) for asset compilation and fingerprinting
-* uses [pyscss](http://pyscss.readthedocs.org/en/latest/) for compiling SCSS to CSS
-* Bower to install assets
+* uses [libsass](https://sass.github.io/libsass-python/) for compiling SCSS to CSS
+* Bower assets are vendored under `publicpeople/static/bower_components/`
 * better debugging with ``python manage.py runserver_plus`` from [django-extensions](http://django-extensions.readthedocs.org/en/latest/)
 * cookies for session storage
 
@@ -32,11 +34,33 @@ On the client:
 Setting up your dev environment
 -------------------------------
 
-Configuration for running the server and database in docker-compose has been provided. The simplest way to get up and running is using docker-compose but nothing strictly depends on it, so feel free to set up another way, bearing in mind that less support would be available.
+The Popolo dependencies are installed from the public-people GitHub forks:
+
+- `public-people/django-popolo` (`public-people` branch)
+- `public-people/multiple-django-popolo-sources` (`master` branch)
+
+No sibling repository checkouts are required. For a local (non-Docker)
+environment:
+
+```bash
+uv sync --group dev
+uv run python manage.py migrate
+uv run python manage.py createsuperuser
+uv run python manage.py runserver
+```
+
+Run the tests with:
+
+```bash
+uv run coverage run manage.py test publicpeople
+uv run coverage report
+```
+
+Configuration for running the server and database in docker-compose has also been provided. The build installs the Popolo forks directly from GitHub.
 
 The following only has to be run the first time you set up your development environment, or when you've deleted the database volume and want to set it up again.
 
-1. Clone this git repository and change into the repository directory.
+1. Clone this repository and change into the repository directory.
 
 2. Start and create the database - this will keep the docker-compose log running in this shell
 

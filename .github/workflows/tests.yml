@@ -1,0 +1,57 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: Python 3.14 / Django 6.1
+    runs-on: ubuntu-latest
+
+    env:
+      DJANGO_DEBUG: "FALSE"
+      DJANGO_SECRET_KEY: ci-only
+      DATABASE_URL: sqlite:////tmp/public-people.sqlite3
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v10.3.3
+        with:
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+
+      - name: Install dependencies
+        run: uv sync --locked --group dev
+
+      - name: Run Django and migration checks
+        run: |
+          uv run --no-sync python manage.py check
+          uv run --no-sync python manage.py makemigrations --check --dry-run
+
+      - name: Run migrations
+        run: uv run --no-sync python manage.py migrate --noinput
+
+      - name: Run tests
+        run: |
+          uv run --no-sync coverage run manage.py test publicpeople
+          uv run --no-sync coverage report
+
+      - name: Collect static files
+        run: uv run --no-sync python manage.py collectstatic --noinput

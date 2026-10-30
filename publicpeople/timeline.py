@@ -94,4 +94,4 @@ def unique(list_of_dicts):
     uniques = {}
     for val in list_of_dicts:
         uniques[json.dumps(val, sort_keys=True)] = val
-    return uniques.values()
+    return list(uniques.values())

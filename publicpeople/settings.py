@@ -2,10 +2,10 @@
 Django settings for publicpeople project.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/1.7/topics/settings/
+https://docs.djangoproject.com/en/6.1/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.7/ref/settings/
+https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 import environ
@@ -15,14 +15,14 @@ env = environ.Env()
 import os
 
 # Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+# https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DJANGO_DEBUG', False)
@@ -84,12 +84,12 @@ if DJANGO_DEBUG_TOOLBAR:
     MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
 
 MIDDLEWARE += [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'simple_history.middleware.HistoryRequestMiddleware',
@@ -102,7 +102,7 @@ WSGI_APPLICATION = 'publicpeople.wsgi.application'
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_METHODS = (
     'GET',
 )
@@ -132,7 +132,7 @@ else:
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.7/topics/i18n/
+# https://docs.djangoproject.com/en/6.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -140,9 +140,9 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Templates
 TEMPLATES = [
@@ -167,15 +167,12 @@ TEMPLATES = [
 ]
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.7/howto/static-files/
-
-ASSETS_DEBUG = DEBUG
-ASSETS_URL_EXPIRE = False
+# https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 # assets must be placed in the 'static' dir of your Django app
 
 # where the compiled assets go
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = env.str('STATIC_ROOT', os.path.join(BASE_DIR, 'staticfiles'))
 # the URL for assets
 STATIC_URL = '/static/'
 
@@ -185,7 +182,7 @@ STATICFILES_FINDERS = (
     "pipeline.finders.PipelineFinder",
 )
 
-PYSCSS_LOAD_PATHS = [
+SASS_INCLUDE_PATHS = [
     os.path.join(BASE_DIR, 'publicpeople', 'static'),
     os.path.join(BASE_DIR, 'publicpeople', 'static', 'bower_components'),
 ]
@@ -213,13 +210,20 @@ PIPELINE = {
     'CSS_COMPRESSOR': None,
     'JS_COMPRESSOR': None,
     'COMPILERS': (
-        'publicpeople.pipeline.PyScssCompiler',
+        'publicpeople.pipeline.SassCompiler',
     ),
 }
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'publicpeople.pipeline.GzipManifestPipelineStorage'
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'publicpeople.pipeline.GzipManifestPipelineStorage',
+    },
+}
 
 
 # Logging

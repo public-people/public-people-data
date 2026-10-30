@@ -1,8 +1,6 @@
-version: '3'
-
 services:
   db:
-    image: postgres
+    image: postgres:15
     environment:
       POSTGRES_USER: publicpeople
       POSTGRES_PASSWORD: publicpeople
@@ -20,7 +18,7 @@ services:
       - DJANGO_DEBUG=TRUE
       - DJANGO_DEBUG_TOOLBAR
     volumes:
-      - .:/code
+      - .:/workspace/public-people-data
     ports:
       - "8000:8000"
     depends_on:
