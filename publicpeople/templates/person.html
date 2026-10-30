@@ -50,7 +50,9 @@
         </div>
 
         <div class="text-muted">
-          Mentioned in {{ event.article.publication }}
+          Mentioned in
+          {{ event.article.publication|cut:"http://news.publicpeople.org.za/api/publications/"|cut:"/" }}
+
         </div>
 
       </a><!-- end .list-group-item -->

@@ -39,7 +39,7 @@
         <h3 class="media-heading">{{ result_item.obj.name }}</h3>
       </a>
       {% if result_item.obj.current_memberships %}
-      <p>Current memberships:</p>
+      <p>Current positions:</p>
       <ul>
         {% for membership in result_item.obj.current_memberships %}
         <li>{{ membership.role }} of {{ membership.organization.name }}</li>
@@ -47,7 +47,7 @@
       </ul>
 
       {% elif result_item.obj.ended_memberships %}
-      <p>Last memberships:</p>
+      <p>Last positions:</p>
       <ul>
         {% for membership in result_item.obj.ended_memberships|slice:":3" %}
         <li>{{ membership.role }} of {{ membership.organization.name }}</li>
