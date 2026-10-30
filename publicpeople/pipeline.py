@@ -1,4 +1,5 @@
 import codecs
+import os
 
 import sass
 from django.conf import settings
@@ -25,6 +26,10 @@ class SassCompiler(SubProcessCompiler):
             filename=infile,
             include_paths=settings.SASS_INCLUDE_PATHS,
         )
+
+        output_dir = os.path.dirname(outfile)
+        if output_dir:
+            os.makedirs(output_dir, exist_ok=True)
 
         with codecs.open(outfile, 'w', encoding='utf-8') as f:
             f.write(result)

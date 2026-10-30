@@ -1,3 +1,4 @@
+import tempfile
 from unittest.mock import patch
 
 from django.conf import settings
@@ -5,6 +6,8 @@ from django.test import TestCase, override_settings
 
 from popolo.models import Membership, Organization, Person, Post
 
+
+TEST_STATIC_ROOT = tempfile.mkdtemp(prefix='publicpeople-test-static-')
 
 TEST_STORAGES = {
     **settings.STORAGES,
@@ -20,7 +23,11 @@ TEST_PIPELINE = {
 }
 
 
-@override_settings(STORAGES=TEST_STORAGES, PIPELINE=TEST_PIPELINE)
+@override_settings(
+    STORAGES=TEST_STORAGES,
+    PIPELINE=TEST_PIPELINE,
+    STATIC_ROOT=TEST_STATIC_ROOT,
+)
 class PublicPeopleTests(TestCase):
     def setUp(self):
         self.person = Person.objects.create(name='Test Person')
